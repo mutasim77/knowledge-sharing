@@ -6,8 +6,6 @@
   💡 Welcome to the Knowledge Sharing Repository! 💡
 </p>
 
-<br/>
-<br/>
 
 ## About ✨
 This repository is a collection of insights, code snippets, and valuable information gathered from various learning experiences. Organized into different folders based on topics such as GO, AWS, and more, this repository is aimed at sharing knowledge with the community.
