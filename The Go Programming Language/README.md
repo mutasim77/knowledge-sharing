@@ -14,7 +14,7 @@ Explore various topics related to Go programming:
 - [Basics 💎](#basics-)
   - [Variables and Data Types 👀](#variables-and-data-types-)
   - [Control Structures ⛓️](#control-structures-)
-  - [Arrays, Slices, Maps 📦](#arrays-slices-maps)
+  - [Arrays, Slices, Maps 📦](#arrays-slices-maps-)
  
 
 ## Introduction to GO 🐹
@@ -99,7 +99,7 @@ var anotherComplex complex128 = 3 + 4i // contain float64 as a real and imaginar
 
 > An int is signed by default, meaning it can represent both positive and negative values. An unsigned is an integer that can never be negative.
 
-### Control Structures ⛓️
+### Control Structures ⛓
 Learn how to control the flow of your code with conditionals, loops, switches and defers.
 
 #### If statements ➡️❓
