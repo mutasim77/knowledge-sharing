@@ -15,8 +15,10 @@ Explore various topics related to Go programming:
   - [Variables and Data Types 👀](#variables-and-data-types-)
   - [Control Structures ⛓️](#control-structures-)
   - [Arrays, Slices, Maps 📦](#arrays-slices-maps-)
- 
+  - [Functions 🛠️](#functions-)
+- [OOP in Go 📦](#oop-in-go-)
 
+  
 ## Introduction to GO 🐹
 Go, created by Google in 2007 and open-sourced in 2009, is a relatively new programming language. It was developed to tackle challenges in modern infrastructure, where applications can benefit from multi-core processors and cloud servers. 📈
 
@@ -356,3 +358,202 @@ func main() {
     }
 }
 ```
+
+### Functions 🛠️
+```
+package main
+
+import "fmt"
+
+// Example 1: Simple Function
+func greet() {
+    fmt.Println("Hello, Gopher!")
+}
+
+// Example 2: Function with Parameters
+func add(x, y int) {                    // x and y are the same type
+    result := x + y
+    fmt.Println("Sum:", result)
+}
+
+// Example 3: Return Type Declaration
+func multiply(x, y int) int {         // int return type
+    result := x * y
+    return result
+}
+
+// Example 4: Can Return Multiple Values at Once
+func divideAndRemainder(x, y int) (int, int) {
+    quotient := x / y
+    remainder := x % y
+    return quotient, remainder
+}
+
+// Example 5: Return Multiple Named Results Simply by Return
+func divide(x, y int) (quotient, remainder int) {
+    quotient = x / y
+    remainder = x % y
+    return           // No explicit return values, using named return values
+}
+
+// Example 6: Functions As Values
+func applyOperation(x, y int, operation func(int, int) int) int {
+    result := operation(x, y)
+    return result
+}
+
+// Example 7: Closures
+func multiplyBy(factor int) func(int) int {
+    return func(x int) int {
+        return x * factor
+    }
+}
+
+// Example 8: Variadic Functions
+func sum(numbers ...int) int {       // // Variadic function that takes multiple integers
+    total := 0
+    for _, num := range numbers {
+        total += num
+    }
+    return total
+}
+
+
+func main() {
+    // Example 1
+    greet()
+
+    // Example 2
+    add(5, 7)
+
+    // Example 3
+    product := multiply(3, 4)
+    fmt.Println("Product:", product)
+
+    // Example 4
+    q, r := divideAndRemainder(10, 3)
+    fmt.Printf("Quotient: %d, Remainder: %d\n", q, r)
+
+    // Example 5
+    q, r = divide(15, 4)
+    fmt.Printf("Quotient: %d, Remainder: %d\n", q, r)
+
+    // Example 6
+    addition := func(a, b int) int {
+        return a + b
+    }
+    result := applyOperation(3, 4, addition)
+    fmt.Println("Result of addition:", result)
+
+    // Example 7
+    double := multiplyBy(2)
+    triple := multiplyBy(3)
+    fmt.Println("Double of 5:", double(5))
+    fmt.Println("Triple of 5:", triple(5))
+
+    // Example 8
+    result = sum(1, 2, 3, 4, 5)
+    fmt.Println("Sum:", result)
+}
+```
+
+## OOP in Go 📦
+**Go OOP Basics** involve using structs for data, interfaces for behavior, embedding for reuse, methods for type-specific functions, and encapsulation for clarity. Although Go lacks traditional inheritance, it achieves similar results through composition and initialization functions. These fundamentals help create modular and flexible code in Go.
+
+### Struct 📦
+Structs allow you to define custom data types by grouping together variables of different types under a single name.
+```go
+// Define a struct 'Person' with fields and a method
+type Person struct {
+    FirstName string
+    LastName  string
+    Age       int
+}
+```
+
+### Interface
+Interfaces define a set of method signatures, and types implement these methods to satisfy the interface. They provide a way to achieve polymorphism in Go.
+
+```go
+// Define a simple interface 'Describer'
+type Describer interface {
+    Describe() string
+}
+
+// Implement the 'Describer' interface for the 'Person' struct
+func (p Person) Describe() string {
+    return fmt.Sprintf("%s %s, Age: %d", p.FirstName, p.LastName, p.Age)
+}
+```
+
+### Embedding and Composition:
+- **Embedding**: Embedding involves including one struct type as a field in another, promoting the embedded type's fields and methods.
+- **Composition**: Combining multiple struct types to create a new type, achieving code reuse and flexibility.
+
+```go
+// Define another struct 'Address' with fields
+type Address struct {
+    City  string
+    State string
+}
+
+// Define a struct 'Employee' embedding 'Person' and 'Address' structs
+type Employee struct {
+    Person // Embed 'Person' struct for composition
+    Address // Embed 'Address' struct for composition
+    JobTitle string
+    salary uint // this one is `encapsulated field`
+}
+
+// Implement the 'Describer' interface for the 'Employee' struct
+func (e Employee) Describe() string {
+    return fmt.Sprintf("%s, %s, Job Title: %s", e.Person.Describe(), e.Address.City, e.JobTitle)
+}
+```
+
+### Inheritance
+Go doesn't have `traditional inheritance`. Composition and embedding are used to achieve similar effects, allowing types to reuse and extend functionality.
+
+> In our case it achieved through `composition and embedding`. `Employee` struct "inherits" characteristics from both `Person` and `Address`.
+
+### Polymorphism
+Polymorphism allows objects of different types to be treated as objects of a common type, enabling flexibility and code abstraction.
+```
+func (p Person) Describe() string {
+    return fmt.Sprintf("%s %s, Age: %d", p.FirstName, p.LastName, p.Age)
+}
+
+func (e Employee) Describe() string {
+    return fmt.Sprintf("%s, %s, Job Title: %s", e.Person.Describe(), e.Address.City, e.JobTitle)
+```
+> Implemented the `Describer` interface for both `Person` and `Employee` structs. In this example both of them are describing, but in different ways.
+
+### Encapsulation
+Encapsulation involves hiding the internal details of a type and exposing only what is necessary. In Go, fields and methods can be encapsulated within a `struct`.
+
+```go
+// Employee struct with encapsulated fields
+type Employee struct {
+    ... // other fields
+
+    salary uint    // salary is `encapsulated field` -> cuz of starting with lowercase
+}
+```
+
+**In GO** we use `lowercase initial letters` for encapsulation. However, it's crucial to understand that Go relies on package-level visibility rather than explicit access modifiers. Fields with `lowercase initials` are still accessible within the same package.
+
+If you were to use the `Employee` struct in a different package, you wouldn't be able to access the `salary` directly. The idea is to encourage encapsulation by convention. However, we can achieve this by creating an `exported function` that functions as a `getter` and `setter`, returning the `salary`.
+
+### Constructor
+**In Go**: While Go lacks explicit constructors, it's common to use functions that return an instance of a struct, initializing it with desired values.
+```go
+// Define a function 'NewPerson' as a constructor for 'Person'
+func NewPerson(firstName, lastName string, age int) Person {
+    return Person{
+        FirstName: firstName,
+        LastName:  lastName,
+        Age:       age,
+    }
+}
+```
+> Created a function `NewPerson` as a constructor for the `Person` struct.
