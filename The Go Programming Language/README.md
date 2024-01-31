@@ -22,7 +22,7 @@ Explore various topics related to Go programming:
   - [Embedding and Composition 🧩🔄](#embedding-and-composition-)
   - [Inheritance ↗️](#inheritance-)
   - [Polymorphism 🔀](#polymorphism-)
-  - [constructor 🛠️ 🌐](#constructor-)
+  - [Constructor 🛠️ 🌐](#constructor-)
 
   
 ## Introduction to GO 🐹
