@@ -487,8 +487,8 @@ type Describer interface {
 }
 
 // Implement the 'Describer' interface for the 'Person' struct
-func (p Person) Describe() string {
-    return fmt.Sprintf("%s %s, Age: %d", p.FirstName, p.LastName, p.Age)
+func (p Person) Describe() {
+    fmt.Sprintf("%s %s, Age: %d", p.FirstName, p.LastName, p.Age)
 }
 ```
 
@@ -512,8 +512,8 @@ type Employee struct {
 }
 
 // Implement the 'Describer' interface for the 'Employee' struct
-func (e Employee) Describe() string {
-    return fmt.Sprintf("%s, %s, Job Title: %s", e.Person.Describe(), e.Address.City, e.JobTitle)
+func (e Employee) Describe() {
+     fmt.Sprintf("%s, %s, Job Title: %s", e.Person.Describe(), e.Address.City, e.JobTitle)
 }
 ```
 
@@ -525,12 +525,12 @@ Go doesn't have `traditional inheritance`. Composition and embedding are used to
 ### Polymorphism 🔀
 Polymorphism allows objects of different types to be treated as objects of a common type, enabling flexibility and code abstraction.
 ```go
-func (p Person) Describe() string {
-    return fmt.Sprintf("%s %s, Age: %d", p.FirstName, p.LastName, p.Age)
+func (p Person) Describe() {
+    fmt.Sprintf("%s %s, Age: %d", p.FirstName, p.LastName, p.Age)
 }
 
-func (e Employee) Describe() string {
-    return fmt.Sprintf("%s, %s, Job Title: %s", e.Person.Describe(), e.Address.City, e.JobTitle)
+func (e Employee) Describe() {
+    fmt.Sprintf("%s, %s, Job Title: %s", e.Person.Describe(), e.Address.City, e.JobTitle)
 ```
 > Implemented the `Describer` interface for both `Person` and `Employee` structs. In this example both of them are describing, but in different ways.
 
