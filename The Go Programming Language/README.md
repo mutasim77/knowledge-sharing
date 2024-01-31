@@ -3,9 +3,9 @@
 </p>
 <br/>
 
-# Welcome to the Go Programming Language repository! 🚀
+# Go Programming Language 🐹
 
-This repository is dedicated to everything Go - an open-source programming language designed for simplicity, efficiency, and ease of use. Whether you're a seasoned Go developer or just getting started, this repository aims to be a helpful resource.
+This repository is dedicated to everything Go - an open-source programming language designed for simplicity, efficiency, and ease of use. Whether you're a seasoned Go developer or just getting started, this repository aims to be a helpful resource. 🚀
 
 # Table of Contents 📜
 Explore various topics related to Go programming:
