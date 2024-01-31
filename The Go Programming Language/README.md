@@ -17,6 +17,12 @@ Explore various topics related to Go programming:
   - [Arrays, Slices, Maps 📦](#arrays-slices-maps-)
   - [Functions 🛠️](#functions-)
 - [OOP in Go 📦](#oop-in-go-)
+  - [Struct 🏗️](#struct-)
+  - [Interface 🔄](#interface-)
+  - [Embedding and Composition 🧩🔄](#embedding-and-composition-)
+  - [Inheritance ↗️](#inheritance-)
+  - [Polymorphism 🔀](#polymorphism-)
+  - [constructor 🛠️ 🌐](#constructor-)
 
   
 ## Introduction to GO 🐹
@@ -460,7 +466,7 @@ func main() {
 ## OOP in Go 📦
 **Go OOP Basics** involve using structs for data, interfaces for behavior, embedding for reuse, methods for type-specific functions, and encapsulation for clarity. Although Go lacks traditional inheritance, it achieves similar results through composition and initialization functions. These fundamentals help create modular and flexible code in Go.
 
-### Struct 📦
+### Struct 🏗
 Structs allow you to define custom data types by grouping together variables of different types under a single name.
 ```go
 // Define a struct 'Person' with fields and a method
@@ -471,7 +477,7 @@ type Person struct {
 }
 ```
 
-### Interface
+### Interface 🔄
 Interfaces define a set of method signatures, and types implement these methods to satisfy the interface. They provide a way to achieve polymorphism in Go.
 
 ```go
@@ -486,7 +492,7 @@ func (p Person) Describe() string {
 }
 ```
 
-### Embedding and Composition:
+### Embedding and Composition 🧩🔄
 - **Embedding**: Embedding involves including one struct type as a field in another, promoting the embedded type's fields and methods.
 - **Composition**: Combining multiple struct types to create a new type, achieving code reuse and flexibility.
 
@@ -511,12 +517,12 @@ func (e Employee) Describe() string {
 }
 ```
 
-### Inheritance
+### Inheritance ↗
 Go doesn't have `traditional inheritance`. Composition and embedding are used to achieve similar effects, allowing types to reuse and extend functionality.
 
 > In our case it achieved through `composition and embedding`. `Employee` struct "inherits" characteristics from both `Person` and `Address`.
 
-### Polymorphism
+### Polymorphism 🔀
 Polymorphism allows objects of different types to be treated as objects of a common type, enabling flexibility and code abstraction.
 ```
 func (p Person) Describe() string {
@@ -528,7 +534,7 @@ func (e Employee) Describe() string {
 ```
 > Implemented the `Describer` interface for both `Person` and `Employee` structs. In this example both of them are describing, but in different ways.
 
-### Encapsulation
+### Encapsulation 🌐
 Encapsulation involves hiding the internal details of a type and exposing only what is necessary. In Go, fields and methods can be encapsulated within a `struct`.
 
 ```go
@@ -544,7 +550,7 @@ type Employee struct {
 
 If you were to use the `Employee` struct in a different package, you wouldn't be able to access the `salary` directly. The idea is to encourage encapsulation by convention. However, we can achieve this by creating an `exported function` that functions as a `getter` and `setter`, returning the `salary`.
 
-### Constructor
+### Constructor 🛠
 **In Go**: While Go lacks explicit constructors, it's common to use functions that return an instance of a struct, initializing it with desired values.
 ```go
 // Define a function 'NewPerson' as a constructor for 'Person'
