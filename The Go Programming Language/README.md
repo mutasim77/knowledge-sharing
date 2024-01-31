@@ -524,7 +524,7 @@ Go doesn't have `traditional inheritance`. Composition and embedding are used to
 
 ### Polymorphism 🔀
 Polymorphism allows objects of different types to be treated as objects of a common type, enabling flexibility and code abstraction.
-```
+```go
 func (p Person) Describe() string {
     return fmt.Sprintf("%s %s, Age: %d", p.FirstName, p.LastName, p.Age)
 }
