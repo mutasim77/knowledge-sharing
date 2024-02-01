@@ -366,7 +366,7 @@ func main() {
 ```
 
 ### Functions 🛠️
-```
+```go
 package main
 
 import "fmt"
