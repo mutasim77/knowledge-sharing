@@ -64,11 +64,38 @@ Cloud computing is like renting a computer, storage, or software over the intern
 Web services are software systems designed to support interoperable machine-to-machine interaction over a network. In the context of AWS, they refer to cloud-based services accessible over the internet, providing computing power, storage, and other functionalities on-demand.
 
 ### Amazon Web Services Categories:
-- **Compute Services 💻:** AWS offers various compute services, such as Amazon EC2 (Elastic Compute Cloud) for scalable virtual servers, AWS Lambda for serverless computing, and Amazon ECS (Elastic Container Service) for container management.
-- **Storage Services 🗄️:** AWS provides storage solutions like Amazon S3 (Simple Storage Service) for scalable object storage, Amazon EBS (Elastic Block Store) for block storage volumes, and Amazon Glacier for long-term archival storage.
-- **Database Services 🛢️:** AWS offers managed database services such as Amazon RDS (Relational Database Service) for relational databases, Amazon DynamoDB for NoSQL databases, and Amazon Redshift for data warehousing.
-- **Networking Services 🌐:** AWS includes networking services like Amazon VPC (Virtual Private Cloud) for isolated cloud environments, Amazon Route 53 for DNS (Domain Name System) routing, and AWS Direct Connect for dedicated network connections.
-- **Security Services 🔒:** AWS provides security services such as AWS IAM (Identity and Access Management) for controlling access to AWS resources, AWS WAF (Web Application Firewall) for protecting web applications, and AWS Shield for DDoS (Distributed Denial of Service) protection.
-- **Management Tools 🛠️:** AWS offers management tools like AWS CloudFormation for infrastructure as code, AWS CloudWatch for monitoring and logging, and AWS Trusted Advisor for optimization recommendations.
-- **Analytics Services 📊:** AWS includes analytics services such as Amazon EMR (Elastic MapReduce) for big data processing, Amazon Athena for querying S3 data using SQL, and Amazon QuickSight for business intelligence.
-- **Machine Learning Services 🤖:** AWS provides machine learning services like Amazon SageMaker for building, training, and deploying machine learning models, Amazon Comprehend for natural language processing, and Amazon Rekognition for image and video analysis.
+- **Storage Services 🗄️:**
+  - **Amazon S3 (Simple Storage Service):** Scalable object storage designed to store and retrieve any amount of data.
+  - **Amazon EBS (Elastic Block Store):** Persistent block storage volumes for use with Amazon EC2 instances.
+  - **Amazon EFS (Elastic File System):** Fully managed file storage for use with EC2 instances.
+  - **Amazon Glacier:** Low-cost storage for data archival and long-term backup.
+
+- **Compute Services 💻:**
+  - **Amazon EC2 (Elastic Compute Cloud):** Scalable virtual servers in the cloud.
+  - **AWS Lambda:** Serverless computing service for running code in response to events.
+  - **Amazon ECS (Elastic Container Service):** Highly scalable container management service.
+  - **Amazon EKS (Elastic Kubernetes Service):** Managed Kubernetes service for container orchestration.
+  - **Amazon EC2 Auto Scaling: ** Enables you to automatically add or remove EC2 instances according to conditions that you define.
+  - **Amazon Elastic Container Registry (Amazon ECR): ** A fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images.
+  - **AWS Elastic Beanstalkis: ** A service for deploying and scaling web applications and services on familiar servers such as Apache and Microsoft Internet Information Services (IIS).
+  - **AWS Fargate:** Serverless compute engine for containers.
+    
+- **Database Services🛢️ :**
+  - **Amazon RDS (Relational Database Service):** Managed relational database service.
+  - **Amazon Aurora:** High-performance relational database compatible with MySQL and PostgreSQL.
+  - **Amazon Redshift:** Fully managed data warehouse service.
+  - **Amazon DynamoDB:** A key-value and document database that delivers single-digit millisecond performance at any scale, with built-in security, backup and restore, and in-memory caching.
+
+- **Networking Services: 🌐**
+  - **Amazon VPC (Virtual Private Cloud):** Isolated cloud resources and customizable networking environment.
+  - **Elastic Load Balancing:** Automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions.
+  - **Amazon CloudFront:** Global content delivery network (CDN) service.
+  - **AWS Transit Gateway:** Centrally manage and scale connectivity across VPCs and on-premises networks.
+  - **Amazon Route 53:** Scalable DNS (Domain Name System) web service.
+  - **AWS Direct Connect:** Dedicated network connection from on-premises to AWS.
+  - **AWS VPN (Virtual Private Network):** Securely connect on-premises networks to AWS.
+    
+- **Security Services: 🔒**
+- **Cost Management Services: 💰**
+- **Management and Governance Services: 🛠️**
+  
