@@ -1,4 +1,4 @@
-<img width="100%" alt="banner" src="https://github.com/mutasim77/knowledge-sharing/assets/96326525/45788179-cb6b-4af4-a039-50f5d31fab31">
+<img width="829" alt="Screenshot 2024-02-08 at 2 12 34 PM" src="https://github.com/mutasim77/knowledge-sharing/assets/96326525/88b78090-cee2-4210-b7bd-985d32046223"><img width="100%" alt="banner" src="https://github.com/mutasim77/knowledge-sharing/assets/96326525/45788179-cb6b-4af4-a039-50f5d31fab31">
 
 # AWS Cloud Computing Repository ☁️ 
 Welcome to the AWS Cloud Computing Repository! This repository serves as a hub for information, guides,
@@ -59,34 +59,49 @@ Cloud computing is like renting a computer, storage, or software over the intern
 
 
 ## Amazon Web Services 💎
+> Below, I'll provide some services and categories of AWS, but it's important to note that these are not the only ones available. AWS offers a wide range of services across various categories to cater to different business needs. The services mentioned here are just a subset of the comprehensive suite of solutions provided by AWS. Let's explore some of them below.
 
 ### What are Web Services ?
 Web services are software systems designed to support interoperable machine-to-machine interaction over a network. In the context of AWS, they refer to cloud-based services accessible over the internet, providing computing power, storage, and other functionalities on-demand.
 
 ### Amazon Web Services Categories:
 - **Storage Services 🗄️:**
+<img width="600" alt="Screenshot 2024-02-08 at 2 12 34 PM" src="https://github.com/mutasim77/knowledge-sharing/assets/96326525/2ee41109-f2b2-4aca-9c31-8429bbd1b071">
+
   - **Amazon S3 (Simple Storage Service):** Scalable object storage designed to store and retrieve any amount of data.
   - **Amazon EBS (Elastic Block Store):** Persistent block storage volumes for use with Amazon EC2 instances.
   - **Amazon EFS (Elastic File System):** Fully managed file storage for use with EC2 instances.
   - **Amazon Glacier:** Low-cost storage for data archival and long-term backup.
 
+---
+
 - **Compute Services 💻:**
+<img width="600" alt="Screenshot 2024-02-08 at 2 12 21 PM" src="https://github.com/mutasim77/knowledge-sharing/assets/96326525/295b954d-997b-422f-8797-89c900d33808">
+
   - **Amazon EC2 (Elastic Compute Cloud):** Scalable virtual servers in the cloud.
   - **AWS Lambda:** Serverless computing service for running code in response to events.
   - **Amazon ECS (Elastic Container Service):** Highly scalable container management service.
   - **Amazon EKS (Elastic Kubernetes Service):** Managed Kubernetes service for container orchestration.
-  - **Amazon EC2 Auto Scaling: ** Enables you to automatically add or remove EC2 instances according to conditions that you define.
-  - **Amazon Elastic Container Registry (Amazon ECR): ** A fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images.
-  - **AWS Elastic Beanstalkis: ** A service for deploying and scaling web applications and services on familiar servers such as Apache and Microsoft Internet Information Services (IIS).
+  - **Amazon EC2 Auto Scaling:** Enables you to automatically add or remove EC2 instances according to conditions that you define.
+  - **Amazon Elastic Container Registry (Amazon ECR):** A fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images.
+  - **AWS Elastic Beanstalkis:** A service for deploying and scaling web applications and services on familiar servers such as Apache and Microsoft Internet Information Services (IIS).
   - **AWS Fargate:** Serverless compute engine for containers.
-    
+
+---
+
 - **Database Services🛢️ :**
+<img width="600" alt="Screenshot 2024-02-08 at 2 11 57 PM" src="https://github.com/mutasim77/knowledge-sharing/assets/96326525/c3b14fb3-73e7-49d5-a329-c02c10e3d41e">
+
   - **Amazon RDS (Relational Database Service):** Managed relational database service.
   - **Amazon Aurora:** High-performance relational database compatible with MySQL and PostgreSQL.
   - **Amazon Redshift:** Fully managed data warehouse service.
   - **Amazon DynamoDB:** A key-value and document database that delivers single-digit millisecond performance at any scale, with built-in security, backup and restore, and in-memory caching.
 
+---
+
 - **Networking Services: 🌐**
+<img width="600" alt="Screenshot 2024-02-08 at 2 11 43 PM" src="https://github.com/mutasim77/knowledge-sharing/assets/96326525/bc71e18e-b90a-4eb9-9c71-0cce55671bc5">
+
   - **Amazon VPC (Virtual Private Cloud):** Isolated cloud resources and customizable networking environment.
   - **Elastic Load Balancing:** Automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, IP addresses, and Lambda functions.
   - **Amazon CloudFront:** Global content delivery network (CDN) service.
@@ -94,8 +109,40 @@ Web services are software systems designed to support interoperable machine-to-m
   - **Amazon Route 53:** Scalable DNS (Domain Name System) web service.
   - **AWS Direct Connect:** Dedicated network connection from on-premises to AWS.
   - **AWS VPN (Virtual Private Network):** Securely connect on-premises networks to AWS.
+
+---
     
 - **Security Services: 🔒**
+<img width="600" alt="Screenshot 2024-02-08 at 2 11 30 PM" src="https://github.com/mutasim77/knowledge-sharing/assets/96326525/bd317e57-a59e-4f4e-9cf9-ecab62645c9b">
+
+  - **AWS IAM (Identity and Access Management):** Securely control access to AWS services and resources.
+  - **AWS Organizations:** Allows you to restrict what services and actions are allowed in your accounts.
+  - **Amazon Cognito:** Lets you add user sign-up, sign-in, and access control to your web and mobile apps.
+  - **AWS Artifact:** Provides on-demand access to AWS security and compliance reports and select online agreements.
+  - **AWS Key Management Service (AWS KMS):** Enables you to create and manage keys. You can use AWS KMS to control the use of encryption across a wide range of AWS services and in your applications.
+  - **AWS Shield:** Managed Distributed Denial of Service (DDoS) protection service that safeguards applications running on AWS.
+
+---
+    
 - **Cost Management Services: 💰**
+<img width="600" alt="Screenshot 2024-02-08 at 2 13 06 PM" src="https://github.com/mutasim77/knowledge-sharing/assets/96326525/df2f8265-c07e-4f91-96ff-7f5cd6a8a403">
+
+  - **AWS Cost and Usage Report:** Contains the most comprehensive set of AWS cost and usage data available, including additional metadata about AWS services, pricing, and reservations
+  - **AWS Budgets:** Set custom cost and usage budgets.
+  - **AWS Cost Explorer:** Visualize, understand, and manage AWS costs and usage.
+
+---
+
 - **Management and Governance Services: 🛠️**
-  
+<img width="600" alt="Management and Governance Services" src="https://github.com/mutasim77/knowledge-sharing/assets/96326525/9f83a9f4-f283-4907-b266-c2615bd734b5">
+
+  - **AWS Management Console:** Provides a web-based user interface for accessing your AWS account.
+  - **AWS Config:** Assess, audit, and evaluate the configuration of AWS resources.
+  - **AWS CloudWatch:** Monitor and log AWS resources and applications.
+  - **AWS Auto Scaling:** Provides features that allow you to scale multiple resources to meet demand.
+  - **AWS Command Line Interface:** Provides a unified tool to manage AWS services.
+  - **AWS Trusted Advisor:** Optimize AWS resources for performance, security, and cost-effectiveness.
+  - **AWS Well-Architected Tool:** Review and improve your workloads based on AWS best practices.
+  - **AWS CloudTrail:** Tracks user activity and API usage
+
+
