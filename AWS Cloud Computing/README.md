@@ -8,6 +8,7 @@ aims to provide valuable content and foster a collaborative learning environment
 
 ## Table of Contents 📜
 - [Introduction to Cloud Computing ☁️ ](#introduction-to-cloud-computing-)
+- [Amazon Web Services 💎](#amazon-web-services-)
 
 ### Introduction to Cloud Computing ☁
 ![image](https://github.com/mutasim77/knowledge-sharing/assets/96326525/9b554614-3f33-4a83-b46b-f8745a356404)
@@ -19,6 +20,7 @@ Cloud computing is like renting a computer, storage, or software over the intern
 1. **Cost-Efficiency:** With cloud computing, you pay for what you use, avoiding the need to invest in expensive hardware upfront.
 2. **Scalability:** It allows you to easily scale up or down based on your needs without the hassle of buying and installing new equipment.
 3. **Accessibility:** You can access your data and applications from anywhere with an internet connection, making collaboration and remote work more efficient.
+4. **Massive Economies of scale:** Because of aggregate usage from all customers, AWS can achieve higher economies of scale and pass savings on to customers.
 
 #### Types of Cloud Computing ✨:
 1. **Infrastructure as a Service (IaaS):** Provides virtualized computing resources over the internet. Users can rent virtual machines and storage.
@@ -54,3 +56,19 @@ Cloud computing is like renting a computer, storage, or software over the intern
 ![image](https://github.com/mutasim77/knowledge-sharing/assets/96326525/1c49ce7e-0f88-48aa-bc92-ce0da38190df)
 
 > In summary, cloud computing is a flexible, cost-effective solution that allows individuals and businesses to access and use computing resources over the internet. It offers various services and deployment models to suit different needs, and major providers like AWS, Azure, and GCP make these resources easily accessible to a global audience.
+
+
+## Amazon Web Services 💎
+
+### What are Web Services ?
+Web services are software systems designed to support interoperable machine-to-machine interaction over a network. In the context of AWS, they refer to cloud-based services accessible over the internet, providing computing power, storage, and other functionalities on-demand.
+
+### Amazon Web Services Categories:
+- **Compute Services 💻:** AWS offers various compute services, such as Amazon EC2 (Elastic Compute Cloud) for scalable virtual servers, AWS Lambda for serverless computing, and Amazon ECS (Elastic Container Service) for container management.
+- **Storage Services 🗄️:** AWS provides storage solutions like Amazon S3 (Simple Storage Service) for scalable object storage, Amazon EBS (Elastic Block Store) for block storage volumes, and Amazon Glacier for long-term archival storage.
+- **Database Services 🛢️:** AWS offers managed database services such as Amazon RDS (Relational Database Service) for relational databases, Amazon DynamoDB for NoSQL databases, and Amazon Redshift for data warehousing.
+- **Networking Services 🌐:** AWS includes networking services like Amazon VPC (Virtual Private Cloud) for isolated cloud environments, Amazon Route 53 for DNS (Domain Name System) routing, and AWS Direct Connect for dedicated network connections.
+- **Security Services 🔒:** AWS provides security services such as AWS IAM (Identity and Access Management) for controlling access to AWS resources, AWS WAF (Web Application Firewall) for protecting web applications, and AWS Shield for DDoS (Distributed Denial of Service) protection.
+- **Management Tools 🛠️:** AWS offers management tools like AWS CloudFormation for infrastructure as code, AWS CloudWatch for monitoring and logging, and AWS Trusted Advisor for optimization recommendations.
+- **Analytics Services 📊:** AWS includes analytics services such as Amazon EMR (Elastic MapReduce) for big data processing, Amazon Athena for querying S3 data using SQL, and Amazon QuickSight for business intelligence.
+- **Machine Learning Services 🤖:** AWS provides machine learning services like Amazon SageMaker for building, training, and deploying machine learning models, Amazon Comprehend for natural language processing, and Amazon Rekognition for image and video analysis.
