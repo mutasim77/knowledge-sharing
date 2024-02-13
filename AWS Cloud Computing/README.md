@@ -1,4 +1,4 @@
-<img width="829" alt="Screenshot 2024-02-08 at 2 12 34 PM" src="https://github.com/mutasim77/knowledge-sharing/assets/96326525/88b78090-cee2-4210-b7bd-985d32046223"><img width="100%" alt="banner" src="https://github.com/mutasim77/knowledge-sharing/assets/96326525/45788179-cb6b-4af4-a039-50f5d31fab31">
+<img width="100%" alt="banner" src="https://github.com/mutasim77/knowledge-sharing/assets/96326525/45788179-cb6b-4af4-a039-50f5d31fab31">
 
 # AWS Cloud Computing Repository ☁️ 
 Welcome to the AWS Cloud Computing Repository! This repository serves as a hub for information, guides,
@@ -9,6 +9,7 @@ aims to provide valuable content and foster a collaborative learning environment
 ## Table of Contents 📜
 - [Introduction to Cloud Computing ☁️ ](#introduction-to-cloud-computing-)
 - [Amazon Web Services 💎](#amazon-web-services-)
+  - [AWS IAM 🔐](#aws-iam-)
 
 ### Introduction to Cloud Computing ☁
 ![image](https://github.com/mutasim77/knowledge-sharing/assets/96326525/9b554614-3f33-4a83-b46b-f8745a356404)
@@ -146,3 +147,24 @@ Web services are software systems designed to support interoperable machine-to-m
   - **AWS CloudTrail:** Tracks user activity and API usage
 
 
+## AWS IAM 🔐
+Think of IAM as the security gatekeeper for your AWS account. It controls `who (users, groups, applications)` can do `what (actions)` and to `what (resources)`.
+
+### Shared Responsibility Model 📜:
+Imagine a pie cut in half.
+- **AWS's half:** They manage the underlying infrastructure (hardware, software, facilities) and its security.
+- **Your half:** You're responsible for securing your resources (data, applications, configurations) within the AWS account.
+
+### Key Points 🔑:
+
+1. **Shared responsibility:**
+   - AWS takes care of the "cloud infrastructure," you manage your "stuff within the cloud."
+2. **IAM helps you assign access securely:**
+   - Create users, groups, and roles.
+   - Define what each can do (permissions) and which resources they can access.
+3. **Securing your account:**
+   - Use strong passwords, rotate them regularly.
+   - Enable multi-factor authentication (MFA) for extra security.
+   - Monitor your account activity and investigate suspicious behavior.
+  
+> You and AWS are partners in securing your cloud environment. By understanding and managing your share of the responsibility, you can keep your data and applications safe.
