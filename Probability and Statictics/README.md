@@ -15,7 +15,7 @@ Let's get started:
 - [The Measure of Dispersion 📏](#the-measure-of-dispersion)
 
 
-### Introduction to Probability and Statistics 📊
+## Introduction to Probability and Statistics 📊
 Probability and statistics are like the tools in a detective's kit, helping us make sense of the world's mysteries by providing clues and evidence. Probability deals with the likelihood of events occurring, similar to predicting the chances of certain outcomes. Meanwhile, statistics is like a magnifying glass, allowing us to closely examine data to uncover hidden patterns and trends.
 
 #### Analogy: 🪄
@@ -27,3 +27,13 @@ Consider a `coin` toss. When you flip a fair coin, there are two possible outcom
 In statistics, let's say you're analyzing the grades of students in a class. By collecting and analyzing the data, you can calculate measures like the average grade, the most common grade, or the spread of grades. These statistics provide valuable insights into the performance of the class and help make decisions about teaching methods or curriculum adjustments.
 
 Probability and statistics work hand in hand to provide us with tools to understand uncertainty and make informed decisions in various aspects of our lives, from weather forecasting to business planning.
+
+## Types of Statistical Analysis 📈
+
+There are two main statistical methods used in data analysis(There are actually more types, but we're focusing on these for now.):
+
+### Descriptive Statistics: 📊📉
+**Descriptive statistics** are like taking a snapshot of your data. They help you summarize and describe the main features of a dataset in a simple and straightforward way. It's like looking at a photo album that gives you a quick overview of what's inside. For example, if you're studying the incomes of people in a city, you might use descriptive statistics to find out the average income, the range of incomes, and how spread out the incomes are. It's all about giving you a clear picture of what your data looks like without getting into complex analysis.
+
+### Inferential Statistics: 🎲🔮
+**Inferential statistics** take you beyond the data you have and into the realm of making educated guesses or predictions about a larger population based on a sample. It's like being a detective who uses clues to solve a mystery. For instance, imagine you have a bowl of candies, but you can only see a few candies at a time. Based on those few candies, you try to make an educated guess about the entire bowl's composition. Similarly, with inferential statistics, you use the information from a sample to make conclusions or predictions about the entire population. For example, if you have data on the test scores of a group of students, you might use inferential statistics to make predictions about the performance of all students in the school. It's about using the power of probability and logic to draw conclusions that extend beyond the data you have.
