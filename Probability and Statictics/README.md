@@ -29,11 +29,36 @@ In statistics, let's say you're analyzing the grades of students in a class. By 
 Probability and statistics work hand in hand to provide us with tools to understand uncertainty and make informed decisions in various aspects of our lives, from weather forecasting to business planning.
 
 ## Types of Statistical Analysis 📈
-
 There are two main statistical methods used in data analysis(There are actually more types, but we're focusing on these for now.):
 
 ### Descriptive Statistics: 📊📉
 **Descriptive statistics** are like taking a snapshot of your data. They help you summarize and describe the main features of a dataset in a simple and straightforward way. It's like looking at a photo album that gives you a quick overview of what's inside. For example, if you're studying the incomes of people in a city, you might use descriptive statistics to find out the average income, the range of incomes, and how spread out the incomes are. It's all about giving you a clear picture of what your data looks like without getting into complex analysis.
 
 ### Inferential Statistics: 🎲🔮
-**Inferential statistics** take you beyond the data you have and into the realm of making educated guesses or predictions about a larger population based on a sample. It's like being a detective who uses clues to solve a mystery. For instance, imagine you have a bowl of candies, but you can only see a few candies at a time. Based on those few candies, you try to make an educated guess about the entire bowl's composition. Similarly, with inferential statistics, you use the information from a sample to make conclusions or predictions about the entire population. For example, if you have data on the test scores of a group of students, you might use inferential statistics to make predictions about the performance of all students in the school. It's about using the power of probability and logic to draw conclusions that extend beyond the data you have.
+**Inferential statistics** take you beyond the data you have and into the realm of making educated guesses or predictions about a larger population based on a sample. It's like being a detective who uses clues to solve a mystery. For instance, imagine you have a bowl of candies, but you can only see a few candies at a time. Based on those few candies, you try to make an educated guess about the entire bowl's composition. Similarly, with inferential statistics, you use the information from a `sample` to make conclusions or predictions about the entire `population`. For example, if you have data on the test scores of a group of students, you might use inferential statistics to make predictions about the performance of all students in the school. It's about using the power of probability and logic to draw conclusions that extend beyond the data you have.
+
+![Descriptive_statistics_and_inferential_statistics](https://datatab.net/assets/tutorial/Descriptive_statistics_and_inferential_statistics.png)
+
+### Samples and Populations: 📋🌍
+
+#### Sample: 📋🔍
+A sample is a subset of the population that we observe or collect data from. It's like a smaller group selected from the larger population to study specific characteristics or behaviors. 
+
+#### Population: 🌍🔍
+The population is the entire group we want to draw conclusions about. It includes every individual or element that meets the criteria of interest. The population represents the bigger picture from which the sample is drawn. 
+
+### Techniques of Sampling 🎯
+Sampling techniques are methods used to pick a group of individuals or items from a larger population. Different techniques are used depending on what you're studying and who you're studying.
+1. **Simple Random Sampling:** 🎩
+   - Like drawing names out of a hat, every person or item in the population has an equal chance of being chosen.
+
+3. **Stratified Sampling:** 🎯
+   - The population is divided into different groups based on specific traits, and then random samples are chosen from each group.
+
+5. **Cluster Sampling:** 🌐
+   - The population is split into clusters or groups, and then some of those clusters are randomly picked. Everyone in the chosen clusters is included in the sample.
+
+4. **Systematic Sampling:** 📝
+   - Individuals or items are picked at regular intervals from a list or sequence, like every 5th person or item.
+5. **Convenience Sampling:** 🚶‍♂️
+   - People or items are chosen based on easy access, which might not give a fair representation of the whole population.
