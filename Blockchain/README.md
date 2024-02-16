@@ -7,8 +7,9 @@ Hey there!👋 Here in this repository, I'm excited to share insights about bloc
 Explore various topics related to Blockchain:
 
 1. [Introduction to Blockchain 🗳️](#introduction-to-blockchain-)
-2. [Centralized, Decentralized and Distributed Systems 📤](#centralized-decentralized-and-distributed-systems)
-
+2. [Centralized, Decentralized and Distributed Systems 📤](#centralized-decentralized-and-distributed-systems-)
+3. [Layers of Blockchain 🧱](#layers-of-blockchain)
+   
 ## Introduction to Blockchain 🗳️
 
 Blockchain is a revolutionary technology that's transforming various industries, from finance to healthcare and beyond. 
@@ -30,3 +31,26 @@ Each transaction is stored in a "block," which is linked to the previous block, 
 3. **Distributed System:**
    - Distributed systems take decentralization further by spreading out tasks and information across multiple locations or computers. This redundancy helps with reliability and resilience because if one part fails, the system can still keep running.
    - **Example:** Picture a network of interconnected computers sharing files. Instead of storing all the files in one central server, copies are distributed across several computers. If one computer goes down, the files are still accessible from others in the network.
+
+## Layers of Blockchain 🧱
+<img width="500" alt="Layers of Blockchain" src="https://github.com/mutasim77/knowledge-sharing/assets/96326525/73fdb184-ece4-4147-b707-b8ee27cf3cf4">
+
+1. **Consensus: 🔒**
+   - This layer ensures that all participants in the network agree on the validity of transactions and the state of the blockchain.
+   - It's like everyone in a group agreeing on the same story before it's added to the official record.
+
+2. **Propagation: 🌐**
+   - This layer handles the distribution of data, like transactions and blocks, across the network of computers (nodes).
+   - It's similar to how news spreads through word of mouth; once one person knows it, they tell others, and it spreads rapidly.
+
+3. **Semantic: 📚**
+   - This layer focuses on the meaning and interpretation of data within the blockchain network.
+   - It's like understanding the language or code used in a document to ensure everyone interprets it the same way.
+
+4. **Execution: ⚙️**
+   - This layer is responsible for running smart contracts and decentralized applications (DApps) on the blockchain.
+   - It's akin to executing commands in a computer program to perform specific tasks automatically.
+
+5. **Application: 📱**
+   - The application layer is where users interact with the blockchain through decentralized applications (DApps) and smart contracts.
+   - It's like using apps on your phone to perform various tasks, but in this case, they operate on a decentralized network.
