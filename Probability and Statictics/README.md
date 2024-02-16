@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://github.com/mutasim77/knowledge-sharing/assets/96326525/222d4c2b-8771-4f8d-9afe-54991b348646"/>
+   <img src="https://github.com/mutasim77/knowledge-sharing/assets/96326525/222d4c2b-8771-4f8d-9afe-54991b348646" width="100%"/>
 </p>
 
 # Foundations of Probability and Statistics 🧮 
