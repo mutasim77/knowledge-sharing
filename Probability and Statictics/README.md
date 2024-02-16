@@ -80,9 +80,9 @@ When we talk about the center of a set of numbers, we're looking for a represent
 - **Example:** Consider the following set of numbers: 3, 5, 7, 9, 11. To find the mean, we add up all the numbers (3 + 5 + 7 + 9 + 11 = 35) and then divide by the total count of numbers (5). So, the mean is 35 / 5 = 7.
 
 ### Median: 📏
-- The median is the middle value when the dataset is arranged in `ascending or descending order`. If there's an even number of data points, the median is the average of the two middle values.
-- **Example:** Let's use the same set of numbers: 3, 5, 7, 9, 11. When arranged in ascending order, the `middle value` is 7. So, the median is 7.
-- **Note:** If we had an `even number` of data points, say, 3, 5, 7, 9, 11, 13, then the median would be the `average of the two middle values: (7 + 9) / 2 = 8`.
+- The median is the middle value when the dataset is arranged in *ascending or descending order*. If there's an even number of data points, the median is the average of the two middle values.
+- **Example:** Let's use the same set of numbers: 3, 5, 7, 9, 11. When arranged in ascending order, the *middle value* is 7. So, the median is 7.
+- **Note:** If we had an *even number* of data points, say, 3, 5, 7, 9, 11, 13, then the median would be the `average of the two middle values: (7 + 9) / 2 = 8`.
 
 ### Mode: 📊
 - The mode is the value that appears most frequently in the dataset. A dataset can have one mode, more than one mode (if multiple values occur with the same highest frequency), or no mode at all if all values occur with equal frequency.
@@ -94,19 +94,19 @@ When we talk about the center of a set of numbers, we're looking for a represent
 When we talk about dispersion, we're referring to how spread out or varied the data points are in a dataset. It tells us about the variability or diversity of the values. There are several measures we use to quantify dispersion:
 
 ### Range: 📏
-- The range is the simplest measure of dispersion. It's the difference between the `largest` and smallest values in the dataset. It gives us an idea of how spread out the entire range of values is.
+- The range is the simplest measure of dispersion. It's the difference between the *largest* and *smallest* values in the dataset. It gives us an idea of how spread out the entire range of values is.
 - **Formula:** `Range = Largest value - Smallest value`
 
 ### Variance: 📊
-- Variance measures the `average squared` deviation from the `mean`. It tells us how much each data point differs from the `mean` on average. A higher variance indicates greater dispersion.
+- Variance measures the *average squared* deviation from the *mean*. It tells us how much each data point differs from the *mean* on average. A higher variance indicates greater dispersion.
 - **Formula:** `Variance = Σ((xi - μ)^2) / n`
 
 ### Standard Deviation: 📈
-- The standard deviation is the `square root of the variance`. It gives us a measure of the average deviation of data points from the mean. A larger standard deviation implies greater variability in the dataset.
+- The standard deviation is the *square root of the variance*. It gives us a measure of the average deviation of data points from the mean. A larger standard deviation implies greater variability in the dataset.
 - **Formula:** `Standard Deviation = √(Variance)`
 
 ### Interquartile Range (IQR): 📊
-- The interquartile range is the `range of the middle 50%` of the data. It's the difference between the third quartile (Q3) and the first quartile (Q1). It's useful because it's not affected by extreme values or outliers.
+- The interquartile range is the *range of the middle 50%* of the data. It's the difference between the third quartile (Q3) and the first quartile (Q1). It's useful because it's not affected by extreme values or outliers.
 - **Formula:** `IQR = Q3 - Q1`
 
 These measures of dispersion help us understand how much the data points deviate from the central tendency measures like mean, median, and mode. They give us insights into the spread or variability within the dataset, which is crucial for making interpretations and decisions based on the data.
