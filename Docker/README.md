@@ -16,12 +16,12 @@ Explore Docker step-by-step:
 - [Getting Started 🏁](#getting-started-)
   - [Installation and Setup ⚙️](#installation-and-setup-)
   - [Running Your First Container 🏃‍♂️](#running-your-first-container-)
+- [Dockerfile Basics 📄](#dockerfile-basics-)
+  - [Writing a Dockerfile ✍️](#writing-a-dockerfile-)
 - [Understanding Images 🖼️](#understanding-images-)
   - [What are Docker Images? 📸](#what-are-docker-images-)
-  - [Pulling and Pushing Images 🚚](#pulling-and-pushing-images-)
-- [Dockerfile Basics 📄](#dockerfile-basics-)
   - [Creating Your Own Images 🎨](#creating-your-own-images-)
-  - [Writing a Dockerfile ✍️](#writing-a-dockerfile-)
+  - [Pulling and Pushing Images 🚚](#pulling-and-pushing-images-)
 - [Working with Containers 🛠️](#working-with-containers-)
   - [Managing Containers 📦](#managing-containers-)
   - [Interacting with Containers 💬](#interacting-with-containers-)
@@ -53,20 +53,20 @@ Let's roll up our sleeves and get started with Docker! Just like learning to rid
 ## Installation and Setup ⚙
 First things first, we need to get Docker up and running on your computer. It's like getting your bike ready for a ride or preheating the oven before baking cookies. Don't worry, though, it's easier than you think!
 
-- 1. **Choose Your Platform:** Visit [Docker's website](https://docs.docker.com/get-docker/) and choose your operating system (Windows, macOS, or Linux).
-- 2. **Read System Requirements:** Before downloading, make sure to read the system requirements carefully to ensure compatibility with your computer.
-- 3. **Download Docker:** After confirming compatibility, proceed with the download by clicking on the appropriate button. This will start the download process.
-- 4. **Install Docker:** Once the download is complete, run the installer by double-clicking on the downloaded file. Follow the on-screen instructions to complete the installation process. It's just like installing any other program.
-- 5. **Start Docker:** After installation, start up Docker on your computer. You'll usually find it in your applications or system tray.
+1. **Choose Your Platform:** Visit [Docker's website](https://docs.docker.com/get-docker/) and choose your operating system (Windows, macOS, or Linux).
+2. **Read System Requirements:** Before downloading, make sure to read the system requirements carefully to ensure compatibility with your computer.
+3. **Download Docker:** After confirming compatibility, proceed with the download by clicking on the appropriate button. This will start the download process.
+4. **Install Docker:** Once the download is complete, run the installer by double-clicking on the downloaded file. Follow the on-screen instructions to complete the installation process. It's just like installing any other program.
+5. **Start Docker:** After installation, start up Docker on your computer. You'll usually find it in your applications or system tray.
  
 And that's it! Docker is now installed and ready to go on your computer.
 
 ## Running Your First Container 🏃‍♂
 Now that Docker is set up, let's dive in and run your very first container. It's like taking your bike for a spin around the block or putting your cookie dough in the oven for the first time. Exciting, right?
 
-- 1. **Open Docker:** Start up Docker on your computer if you haven't already.
-- 2. **Open Terminal or Command Prompt:** We'll need to use a terminal or command prompt to interact with Docker.
-- 3. **Run a Container:** Use the `docker run` command followed by the name of an image to run a container. For example, you can run a simple "Hello, World!" container like this:
+1. **Open Docker:** Start up Docker on your computer if you haven't already.
+2. **Open Terminal or Command Prompt:** We'll need to use a terminal or command prompt to interact with Docker.
+3. **Run a Container:** Use the `docker run` command followed by the name of an image to run a container. For example, you can run a simple "Hello, World!" container like this:
 ```bash
 docker run hello-world
 ```
