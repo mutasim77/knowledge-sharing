@@ -23,10 +23,13 @@ Despite having separate repositories for notes and sharing knowledge in the past
 This repository stands as a testament to the belief that knowledge becomes more powerful when shared among enthusiasts and learners.
 
 ## Table of Contents 📜
-- [GO](https://github.com/mutasim77/knowledge-sharing/blob/master/The%20Go%20Programming%20Language/README.md) - Discover the world of Go programming language. 🐹
-- [AWS](https://github.com/mutasim77/knowledge-sharing/blob/master/AWS%20Cloud%20Computing/README.md) - Dive into the Cloud Computing with Amazon Web Services. 🪄
-- [Software Testing](https://github.com/mutasim77/knowledge-sharing/blob/master/Software%20Testing/README.md) -  🧪 Test your skills, one note at a time! Explore testing! 🔍
-
+- [GO 🐹](https://github.com/mutasim77/knowledge-sharing/blob/master/The%20Go%20Programming%20Language/README.md) - Discover the world of Go programming language. 🐹
+- [AWS ☁️](https://github.com/mutasim77/knowledge-sharing/blob/master/AWS%20Cloud%20Computing/README.md) - Dive into the Cloud Computing with Amazon Web Services. 🪄
+- [Docker 🐳](https://github.com/mutasim77/knowledge-sharing/tree/master/Docker) - Streamline deployment with Docker! Explore containerization. 🚀
+- [Blockchain ⛓️](https://github.com/mutasim77/knowledge-sharing/tree/master/Blockchain) -  Discover decentralized networks! 💡
+- [Cryptography 🔒](https://github.com/mutasim77/knowledge-sharing/tree/master/Cryptography) -  Unlock secure communication! 🛡️
+- [Software Testing 🧪](https://github.com/mutasim77/knowledge-sharing/blob/master/Software%20Testing/README.md) - Test your skills, one note at a time! 🧪
+- [Probability and Statictics 📊](https://github.com/mutasim77/knowledge-sharing/tree/master/Probability%20and%20Statictics) - Master data insight! Explore Probability and Statistics 📈
 
 ## Contributing 🔗
 Your contributions are highly encouraged! If you've learned something new or have valuable insights to share, feel free to contribute. Here's our [Contribution guide](https://github.com/mutasim77/knowledge-sharing/blob/master/.github/CONTRIBUTING.md); please read it, and you're welcome to contribute!
