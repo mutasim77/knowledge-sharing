@@ -10,6 +10,7 @@ aims to provide valuable content and foster a collaborative learning environment
 - [Introduction to Cloud Computing ☁️ ](#introduction-to-cloud-computing-)
 - [Amazon Web Services 💎](#amazon-web-services-)
   - [AWS IAM 🔐](#aws-iam-)
+  - [AWS Storage 🗄️](#aws-storage-)
 
 ### Introduction to Cloud Computing ☁
 ![image](https://github.com/mutasim77/knowledge-sharing/assets/96326525/9b554614-3f33-4a83-b46b-f8745a356404)
@@ -168,3 +169,26 @@ Imagine a pie cut in half.
    - Monitor your account activity and investigate suspicious behavior.
   
 > You and AWS are partners in securing your cloud environment. By understanding and managing your share of the responsibility, you can keep your data and applications safe.
+
+## AWS Storage 🗄
+Amazon offers several storage services that businesses and individuals can use to store their data securely and access it whenever they need to. Here are the main ones:
+
+![AWS Storage](https://www.awsgeek.com/AWS-Storage-Gateway/AWS-Storage-Gateway.jpg)
+
+### Amazon S3 (Simple Storage Service) 🦋:
+  - Think of it as a big digital warehouse where you can store any type of data, like documents, images, or videos.
+  - For example, if you have a website, you can store all your images and files on S3, so they're safe and easy to access.
+
+### Amazon EBS (Elastic Block Store) 🦄:
+  - It's like having a hard drive in the cloud. You can store data that you need to access quickly, like operating systems or database files.
+  - Imagine you're running a website with a database. You can use EBS to store the database files securely and ensure quick access whenever someone visits your site.
+
+### Amazon EFS (Elastic File System) 🐹:
+  - This is like having a shared network drive in the cloud. Multiple users or systems can access the same files simultaneously.
+  - For example, if you're working on a project with your team, you can store all project files in EFS, and everyone can access and work on them together from different locations.
+
+### Amazon S3 Glacier 🐌:
+  - It's a storage service for data that you don't need to access frequently but still want to keep for long-term storage.
+  - Think of it as a vault for your digital files. For instance, you might use Glacier to store old backups or archives of your company's documents that you need to keep for legal reasons.
+
+> Amazon storage services are like different types of storage units you can rent in the cloud. Depending on your needs, you can choose the one that best fits what you want to store and how you want to access it.
