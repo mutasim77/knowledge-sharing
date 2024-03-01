@@ -13,9 +13,11 @@ Let's get started:
 - [Introduction to Probability and Statistics 📊](#introduction-to-probability-and-statistics-)
 - [Types of Statistical Analysis 📈](#types-of-statistical-analysis-)
 - [Techniques of Sampling 🎯](#techniques-of-sampling-)
+- [Scales of Measurement 🔗](#scales-of-measurement-)
 - [The Measure of Center of Tendency 🎯](#the-measure-of-center-of-tendency-)
 - [The Measure of Dispersion 📏](#the-measure-of-dispersion-)
-
+- [Measure of Shape 🧯](#measure-of-shape-)
+- [Distribution of Data 🐌](#distribution-of-data-)
 
 ## Introduction to Probability and Statistics 📊
 Probability and statistics are like the tools in a detective's kit, helping us make sense of the world's mysteries by providing clues and evidence. Probability deals with the likelihood of events occurring, similar to predicting the chances of certain outcomes. Meanwhile, statistics is like a magnifying glass, allowing us to closely examine data to uncover hidden patterns and trends.
@@ -133,14 +135,27 @@ In statistics, the measure of shape refers to the characteristics that describe 
 
 ### Skewness: 📈
 - Skewness measures the asymmetry of the data distribution. It indicates whether the data is skewed to the left or right, or if it's symmetrically distributed around the mean.
-- Positive skewness: Data is skewed to the right, with a long tail on the right side.
-- Negative skewness: Data is skewed to the left, with a long tail on the left side.
-- Symmetric distribution: Data is evenly distributed around the mean, with no skewness.
+- **Positive skewness:** Data is skewed to the right, with a long tail on the right side.
+- **Negative skewness:** Data is skewed to the left, with a long tail on the left side.
+- **Symmetric distribution:** Data is evenly distributed around the mean, with no skewness.
 - Skewness helps us understand if there are extreme values on one side of the distribution.
 
 ### Kurtosis: 📊
 - Kurtosis measures the peakedness or flatness of the data distribution. It tells us how sharply or smoothly the data rises and falls around the mean.
-- Positive kurtosis: Data has a high peak and heavy tails, indicating a sharp, peaked distribution.
-- Negative kurtosis: Data has a flat peak and light tails, indicating a flat, dispersed distribution.
-- Moderate kurtosis: Data has a moderate peak and tail behavior.
+- **Positive kurtosis:** Data has a high peak and heavy tails, indicating a sharp, peaked distribution.
+- **Negative kurtosis:** Data has a flat peak and light tails, indicating a flat, dispersed distribution.
+- **Moderate kurtosis:** Data has a moderate peak and tail behavior.
 - Kurtosis helps us understand if the data is concentrated around the mean or spread out.
+
+## Distribution of Data 🐌
+The distribution of data refers to how the values or observations in a dataset are spread out or arranged. Understanding the distribution helps us grasp the patterns, tendencies, and variability within the data. Data distributions can be categorized into two main types:
+
+### Symmetrical Distribution: 🛎️
+- In a symmetrical distribution, data is evenly spread around the center point, forming a `balanced` shape. The most common example is the `normal distribution`, where data is symmetrically distributed around the mean, forming a bell-shaped curve.
+
+### Asymmetrical Distribution: 📈📉
+- In an asymmetrical distribution, data is not evenly spread out, and the shape of the distribution is skewed to one side. There are two types:
+   - **Positive skew:** Data is skewed to the right, with a long tail on the right side.
+   - **Negative skew:** Data is skewed to the left, with a long tail on the left side.
+ 
+Understanding the type of distribution helps us interpret the characteristics and patterns present in the data, guiding us in selecting appropriate statistical analyses and making informed decisions.
