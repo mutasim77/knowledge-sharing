@@ -71,6 +71,22 @@ Sampling techniques are methods used to pick a group of individuals or items fro
 
 ---
 
+## Scales of Measurement 🔗
+
+### Nominal Scale: 🏷️
+- Categories without any order. Example: Gender (male, female), Eye Color (blue, brown, green).
+
+### Ordinal Scale: 🥇🥈🥉
+- Ordered categories but differences between them are not uniform. Example: Ranks (1st place, 2nd place, 3rd place), Satisfaction Rating (poor, fair, good, excellent).
+
+### Interval Scale: 📏
+- Ordered categories with equal intervals, but no true zero point. Example: Temperature in Celsius or Fahrenheit.
+
+### Ratio Scale: 🔢
+- Ordered categories with equal intervals and a true zero point. Allows for meaningful ratios and proportions. Example: Height, Weight, Time.
+
+---
+
 ## The Measure of Center of Tendency 🎯
 When we talk about the center of a set of numbers, we're looking for a representative value that summarizes where most of the data points lie. There are three common measures we use:
 
@@ -110,3 +126,21 @@ When we talk about dispersion, we're referring to how spread out or varied the d
 - **Formula:** `IQR = Q3 - Q1`
 
 These measures of dispersion help us understand how much the data points deviate from the central tendency measures like mean, median, and mode. They give us insights into the spread or variability within the dataset, which is crucial for making interpretations and decisions based on the data.
+
+
+## Measure of Shape 🧯
+In statistics, the measure of shape refers to the characteristics that describe the distribution or pattern of data points in a dataset. Understanding the shape of the data distribution is essential for drawing insights and making informed decisions. Here are some common measures of shape:
+
+### Skewness: 📈
+- Skewness measures the asymmetry of the data distribution. It indicates whether the data is skewed to the left or right, or if it's symmetrically distributed around the mean.
+- Positive skewness: Data is skewed to the right, with a long tail on the right side.
+- Negative skewness: Data is skewed to the left, with a long tail on the left side.
+- Symmetric distribution: Data is evenly distributed around the mean, with no skewness.
+- Skewness helps us understand if there are extreme values on one side of the distribution.
+
+### Kurtosis: 📊
+- Kurtosis measures the peakedness or flatness of the data distribution. It tells us how sharply or smoothly the data rises and falls around the mean.
+- Positive kurtosis: Data has a high peak and heavy tails, indicating a sharp, peaked distribution.
+- Negative kurtosis: Data has a flat peak and light tails, indicating a flat, dispersed distribution.
+- Moderate kurtosis: Data has a moderate peak and tail behavior.
+- Kurtosis helps us understand if the data is concentrated around the mean or spread out.
