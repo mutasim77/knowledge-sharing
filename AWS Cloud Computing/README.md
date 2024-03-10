@@ -11,6 +11,7 @@ aims to provide valuable content and foster a collaborative learning environment
 - [Amazon Web Services 💎](#amazon-web-services-)
   - [AWS IAM 🔐](#aws-iam-)
   - [AWS Storage 🗄️](#aws-storage-)
+  - [AWS Compute 💻](#aws-compute-)
 
 ### Introduction to Cloud Computing ☁
 ![image](https://github.com/mutasim77/knowledge-sharing/assets/96326525/9b554614-3f33-4a83-b46b-f8745a356404)
@@ -192,3 +193,38 @@ Amazon offers several storage services that businesses and individuals can use t
   - Think of it as a vault for your digital files. For instance, you might use Glacier to store old backups or archives of your company's documents that you need to keep for legal reasons.
 
 > Amazon storage services are like different types of storage units you can rent in the cloud. Depending on your needs, you can choose the one that best fits what you want to store and how you want to access it.
+
+## AWS Compute 💻
+Amazon provides various compute services that allow you to run your applications and processes in the cloud efficiently. Here are the main ones:
+
+![AWS Compute](https://td-mainsite-cdn.tutorialsdojo.com/wp-content/uploads/2020/05/AWS-Compute-Overview.png)
+
+### AWS EC2 (Elastic Compute Cloud) ⛅️:
+- This is like renting virtual computers in the cloud. You can configure these instances with the exact amount of CPU, memory, and storage you need.
+- For example, if you have a website, you can use EC2 to host it. You choose the instance type that suits your website's requirements, like how much traffic it gets and how much processing power it needs.
+
+### Container Services 🫙:
+Containers are like lightweight, portable packages that contain everything your application needs to run. ECS and EKS help you manage and orchestrate these containers at scale.
+
+#### Amazon ECS (Elastic Container Service) 🔆:
+- ECS is a fully managed container orchestration service that allows you to easily run, stop, and manage Docker containers on a cluster.
+- With ECS, you can define your application as a collection of tasks and services, which are then scheduled and run on a cluster of EC2 instances or AWS Fargate.
+- It provides features like automatic scaling, load balancing, and service discovery, making it easier to deploy and manage containerized applications at scale.
+- For example, if you have a microservices architecture for your application, you can use ECS to deploy and manage each microservice as a separate container, ensuring efficient resource utilization and easy scalability.
+
+#### Amazon EKS (Elastic Kubernetes Service) 〽️:
+- EKS is a fully managed Kubernetes service that allows you to run Kubernetes clusters on AWS without the complexity of managing the underlying infrastructure.
+- Kubernetes is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications.
+- With EKS, you can take advantage of Kubernetes' rich ecosystem of tools and resources, including support for advanced features like custom networking, storage, and security policies.
+- It simplifies the process of running Kubernetes clusters by handling tasks such as cluster provisioning, upgrading, and patching, allowing you to focus on developing and deploying your applications.
+- For example, if you have a large, complex application with multiple components that need to be deployed and managed across different environments, you can use EKS to orchestrate and scale these components efficiently, ensuring high availability and reliability.
+
+### AWS Lambda 🐏:
+- Lambda allows you to run code without provisioning or managing servers. You just upload your code, and Lambda takes care of running it whenever it's triggered.
+- For instance, let's say you have a mobile app that needs to resize images when users upload them. Instead of setting up servers to handle this, you can use Lambda to automatically resize the images as soon as they're uploaded.
+
+### AWS Elastic Beanstalk 🚸:
+- This service makes it easy to deploy and manage your applications in the cloud without worrying about the underlying infrastructure.
+- Think of it as a platform that handles all the heavy lifting of deploying, scaling, and monitoring your application. You just upload your code, and Elastic Beanstalk takes care of the rest.
+
+> Amazon's compute services offer different ways to run your applications in the cloud, whether you need virtual machines, containers, serverless computing, or a managed platform for your apps. Each service caters to different needs and preferences, giving you flexibility and scalability for your projects.
