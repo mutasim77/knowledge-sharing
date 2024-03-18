@@ -23,7 +23,10 @@ Explore various topics related to Go programming:
   - [Inheritance ↗️](#inheritance-)
   - [Polymorphism 🔀](#polymorphism-)
   - [Constructor 🛠️ 🌐](#constructor-)
-
+- [Web Development with Go 🌐](#web-development-with-go-)
+  - [HTTP Server and Routing 🛣️](#http-server-and-routing-)
+  - [Middleware and Authentication 🔑](#middleware-and-authentication-)
+  - [Database Integration 📊](#database-integration-)
   
 ## Introduction to GO 🐹
 Go, created by Google in 2007 and open-sourced in 2009, is a relatively new programming language. It was developed to tackle challenges in modern infrastructure, where applications can benefit from multi-core processors and cloud servers. 📈
@@ -41,7 +44,7 @@ Go's advantages include a straightforward syntax, rapid application development,
 
 Now that we understand why Go was created and what sets it apart from other languages, let's dive into learning its core concepts and syntax. 🌟
 
-## Basics 💎
+# Basics 💎
 Let's not forget tradition and start by simply printing 'Hello, World!' 😁
 
 ### Hello World 🌍 
@@ -463,7 +466,7 @@ func main() {
 }
 ```
 
-## OOP in Go 📦
+# OOP in Go 📦
 **Go OOP Basics** involve using structs for data, interfaces for behavior, embedding for reuse, methods for type-specific functions, and encapsulation for clarity. Although Go lacks traditional inheritance, it achieves similar results through composition and initialization functions. These fundamentals help create modular and flexible code in Go.
 
 ### Struct 🏗
@@ -563,3 +566,188 @@ func NewPerson(firstName, lastName string, age int) Person {
 }
 ```
 > Created a function `NewPerson` as a constructor for the `Person` struct.
+
+
+# Web Development with Go 🌐
+Web development with Go involves using the Go programming language to create web applications, APIs (Application Programming Interfaces), and services. Go provides a robust standard library for handling HTTP requests and responses, making it a popular choice for building scalable and efficient web applications.
+
+One of the key features of Go for web development is its built-in HTTP server capabilities. With just a few lines of code, you can create a fully functional web server to handle incoming HTTP requests and serve responses. Go's simplicity and performance make it well-suited for handling high loads and concurrent requests.
+
+In addition to its HTTP server capabilities, Go supports routing, middleware, authentication, and database integration, allowing developers to build full-fledged web applications with ease. Whether you're building a simple website, a RESTful API, or a complex web service, Go provides the tools and flexibility needed to get the job done efficiently.
+
+## HTTP Server and Routing 🛣️
+An HTTP server is like a virtual receptionist for your web application. It listens for incoming requests from web browsers or other clients, processes those requests, and sends back appropriate responses.
+
+```go
+package main
+
+import (
+    "fmt"
+    "net/http"
+)
+
+func handler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Hello, World!")
+}
+
+func main() {
+    http.HandleFunc("/", handler)
+    http.ListenAndServe(":8080", nil)
+}
+```
+In this example:
+- We define a handler function that takes an `http.ResponseWriter` and an `http.Request` as arguments. This function writes "Hello, World!" to the response.
+- We use `http.HandleFunc` to associate the `handler` function with the root URL ("/").
+- We start the HTTP server on port `8080` using `http.ListenAndServe`.
+
+When you run this program and visit `http://localhost:8080` in your web browser, you'll see "Hello, World!" displayed on the page.
+
+#### Routing Requests 🔗
+Routing in Go allows you to direct incoming HTTP requests to different parts of your application based on the URL path. This is useful for organizing your code and handling different types of requests.
+Here's an example of routing multiple URLs to different handler functions:
+
+```go
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Welcome to the homepage!")
+}
+
+func aboutHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "About Us")
+}
+
+func contactHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Contact Us")
+}
+
+func main() {
+    http.HandleFunc("/", homeHandler)
+    http.HandleFunc("/about", aboutHandler)
+    http.HandleFunc("/contact", contactHandler)
+    http.ListenAndServe(":8080", nil)
+}
+```
+
+In this example:
+
+- The `/` URL is routed to the `homeHandler` function, which displays a welcome message.
+- The `/about` URL is routed to the `aboutHandler` function, which displays information about the company.
+- The `/contact` URL is routed to the `contactHandler` function, which provides contact information.
+
+When a user visits `http://localhost:8080/about`, for example, they'll see the "About Us" message.
+
+
+## Middleware and Authentication 🔑
+Middleware and authentication are crucial components in web development with Go. Middleware allows you to intercept and process incoming HTTP requests before they reach the final handler, while authentication ensures that only authorized users can access protected resources. Let's explore these concepts further.
+
+### Middleware Basics 👻
+Middleware acts as a bridge between the HTTP server and your application's handlers. It allows you to perform common tasks such as logging, authentication, authorization, and request preprocessing. Middleware functions are executed sequentially, with each function having the option to modify the request or response before passing them to the next middleware or handler.
+
+Here's a simple example of a logging middleware in Go:
+```go
+func loggingMiddleware(next http.Handler) http.Handler {
+    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+        log.Println("Incoming request:", r.Method, r.URL.Path)
+        next.ServeHTTP(w, r)
+    })
+}
+
+func main() {
+    // Use loggingMiddleware for all routes
+    http.Handle("/", loggingMiddleware(http.HandlerFunc(handler)))
+    http.ListenAndServe(":8080", nil)
+}
+```
+In this example:
+
+- We define a `loggingMiddleware` function that takes a `http.Handler` as input and returns a new http.Handler.
+- Inside the middleware function, we log information about the incoming request, such as the HTTP method and URL path.
+- We then call the `ServeHTTP` method on the next handler in the chain to pass the request along.
+
+### Authentication 🛅
+Authentication is the process of verifying the identity of users accessing your application. It ensures that only authenticated users can access certain parts of your application or perform specific actions. There are various authentication methods available, such as username/password, API keys, JSON Web Tokens (JWT), OAuth, and more.
+
+Here's a basic example of implementing username/password authentication in Go:
+```go
+func authMiddleware(next http.Handler) http.Handler {
+    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+        username, password, ok := r.BasicAuth()
+        if !ok || !checkCredentials(username, password) {
+            http.Error(w, "Unauthorized", http.StatusUnauthorized)
+            return
+        }
+        next.ServeHTTP(w, r)
+    })
+}
+
+func checkCredentials(username, password string) bool {
+    // Check if username and password are valid
+    // This could involve querying a database or validating against a predefined list
+    // For simplicity, we'll hardcode a username/password combination
+    return username == "admin" && password == "password"
+}
+
+func main() {
+    // Use authMiddleware for protected routes
+    http.Handle("/admin", authMiddleware(http.HandlerFunc(adminHandler)))
+    http.ListenAndServe(":8080", nil)
+}
+```
+In this example:
+
+- We define an `authMiddleware` function that checks the username and password sent in the request's Basic Authentication header.
+- If the credentials are valid, the request is passed to the next handler. Otherwise, an `HTTP 401` Unauthorized response is returned.
+- We use the `checkCredentials` function to verify the username and password against a predefined list (or a database).
+
+> [!IMPORTANT]
+> By leveraging middleware, you can modularize your application's logic and handle common tasks efficiently. Authentication ensures that your application's resources are protected and only accessible to authorized users. Understanding and implementing these concepts will help you build secure and scalable web applications in Go.
+
+## Database Integration 📊
+Go provides excellent support for interacting with various databases, including SQL databases like MySQL, PostgreSQL, SQLite, and NoSQL databases like MongoDB. Database integration typically involves the following steps:
+
+1. Importing the appropriate database driver package.
+2. Establishing a connection to the database.
+3. Executing queries or commands to interact with the database.
+
+Let's look at an example of integrating Go with a MySQL database:
+```go
+package main
+
+import (
+    "database/sql"
+    "fmt"
+    _ "github.com/go-sql-driver/mysql"
+)
+
+func main() {
+    // Open a connection to the MySQL database
+    db, err := sql.Open("mysql", "username:password@tcp(localhost:3306)/dbname")
+    if err != nil {
+        fmt.Println("Error connecting to database:", err)
+        return
+    }
+    defer db.Close()
+
+    // Perform database operations
+    // Example: Querying all rows from a table
+    rows, err := db.Query("SELECT * FROM users")
+    if err != nil {
+        fmt.Println("Error querying database:", err)
+        return
+    }
+    defer rows.Close()
+
+    // Process query results
+    for rows.Next() {
+        // Process each row
+    }
+}
+```
+Replace "username", "password", "localhost", "3306", and "dbname" with your MySQL credentials and database details.
+
+In this example:
+- We import the `database/sql` package for working with databases and the MySQL driver package (github.com/go-sql-driver/mysql).
+- We open a connection to the MySQL database using `sql.Open`.
+- We execute a query to select all rows from the users table and process the query results.
+
+> [!TIP]
+> By understanding how to connect and interact with databases using Go, you can build powerful and scalable web applications that persist and manipulate data effectively.
