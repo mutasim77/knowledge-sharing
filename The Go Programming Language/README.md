@@ -781,7 +781,7 @@ Authentication is a fundamental aspect of web development, ensuring that users a
   - The application verifies these credentials against a known source, such as a database or an authentication service.
   - If the credentials match, the user is considered authenticated and granted access; otherwise, access is denied.
 
-## Implementing Authentication in Go 🛠️
+## Implementing Authentication in Go 🛠
 Implementing authentication involves using various techniques and libraries to verify user identities. Let's explore three common methods of authentication in Go: Basic Authentication, JSON Web Tokens (JWT), and OAuth Integration.
 
 ### Basic Authentication 🐌
@@ -822,7 +822,7 @@ func main() {
 }
 ```
 
-## JSON Web Tokens (JWT) 🌚
+### JSON Web Tokens (JWT) 🌚
 - JSON Web Tokens (JWT) are compact, URL-safe tokens that contain user claims and are digitally signed for authentication and authorization.
 - In Go, JWT can be generated upon successful authentication and included in subsequent requests for access.
 - The server verifies the JWT's signature and claims to authenticate users and authorize their actions.
@@ -894,3 +894,21 @@ func main() {
 > - [OAuth 2.0 Implementation in Golang](https://dev.to/siddheshk02/oauth-20-implementation-in-golang-3mj1)
 > - [Getting Started with OAuth2 in Go](https://medium.com/@pliutau/getting-started-with-oauth2-in-go-2c9fae55d187)
 > - [Creating an OAuth2 Client in Golang](https://www.sohamkamani.com/golang/oauth/)
+
+> Implementing authentication requires understanding and choosing the appropriate method for your application's security and usability needs. Whether it's Basic Authentication, JSON Web Tokens (JWT), or OAuth Integration, each method offers its advantages and trade-offs. By effectively implementing authentication mechanisms, developers can ensure the integrity and security of their apps.
+
+## Understanding Authorization 🔑
+Authorization is a critical aspect of web development, determining `what` actions a user is allowed to perform within an application after their identity has been authenticated. In simpler terms, it controls access to different functionalities or resources based on the user's permissions or roles. Let's explore the concept of authorization in more detail:
+
+1. **Purpose of Authorization: 🔗**
+   - Authorization ensures that users can only access the parts of an application or resources that they are allowed to.
+   - It prevents unauthorized users from performing sensitive operations or accessing restricted data.
+
+2. **Authorization Methods: 👀**
+   - **Role-Based Access Control (RBAC):** Users are assigned roles, and access rights are granted based on these roles. For example, an "admin" role might have full access to all functionalities, while a "user" role might have limited access.
+   - **Attribute-Based Access Control (ABAC):** Access rights are determined based on various attributes associated with the user, the resource, and the environment. This approach allows for more fine-grained access control.
+  
+3. **Authorization Process: 🧯**
+  - Once a user's identity is authenticated, the application determines the user's permissions or roles.
+  - Based on these permissions or roles, the application decides whether to grant or deny access to specific functionalities or resources.
+  - If access is granted, the user can proceed with the requested operation; otherwise, access is denied, and an appropriate error message is returned.
