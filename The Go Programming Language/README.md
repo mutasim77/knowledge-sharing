@@ -780,3 +780,117 @@ Authentication is a fundamental aspect of web development, ensuring that users a
   - When a user attempts to access a protected resource, they provide their credentials.
   - The application verifies these credentials against a known source, such as a database or an authentication service.
   - If the credentials match, the user is considered authenticated and granted access; otherwise, access is denied.
+
+## Implementing Authentication in Go 🛠️
+Implementing authentication involves using various techniques and libraries to verify user identities. Let's explore three common methods of authentication in Go: Basic Authentication, JSON Web Tokens (JWT), and OAuth Integration.
+
+### Basic Authentication 🐌
+- Basic Authentication involves clients providing their credentials (username and password) with each request.
+- In Go, Basic Authentication can be implemented using HTTP's built-in authentication mechanisms or custom middleware.
+- Upon receiving a request, the server verifies the provided credentials against a stored source, such as a database.
+  
+```go
+package main
+
+import (
+    "net/http"
+    "strings"
+)
+
+func BasicAuth(next http.HandlerFunc) http.HandlerFunc {
+    return func(w http.ResponseWriter, r *http.Request) {
+        username, password, ok := r.BasicAuth()
+        if !ok || !checkCredentials(username, password) {
+            http.Error(w, "Unauthorized", http.StatusUnauthorized)
+            return
+        }
+        next.ServeHTTP(w, r)
+    }
+}
+
+func checkCredentials(username, password string) bool {
+    // Check username and password against stored credentials
+    return username == "admin" && password == "password"
+}
+
+func main() {
+    http.HandleFunc("/", BasicAuth(func(w http.ResponseWriter, r *http.Request) {
+        w.Write([]byte("Authenticated successfully"))
+    }))
+
+    http.ListenAndServe(":8080", nil)
+}
+```
+
+## JSON Web Tokens (JWT) 🌚
+- JSON Web Tokens (JWT) are compact, URL-safe tokens that contain user claims and are digitally signed for authentication and authorization.
+- In Go, JWT can be generated upon successful authentication and included in subsequent requests for access.
+- The server verifies the JWT's signature and claims to authenticate users and authorize their actions.
+
+```go
+package main
+
+import (
+    "github.com/gofiber/fiber/v2"
+    "github.com/dgrijalva/jwt-go"
+    "golang.org/x/crypto/bcrypt"
+    "time"
+    "strconv"
+)
+
+const SecretKey = "your-secret-key"
+
+func Login(c *fiber.Ctx) error {
+    var data map[string]string
+
+    if err := c.BodyParser(&data); err != nil {
+        return err
+    }
+
+    // TODO HERE: Check the sent data with the actual one from database and continue if the user exists;
+	
+    // Create JWT token
+    token := jwt.New(jwt.SigningMethodHS256)
+    claims := token.Claims.(jwt.MapClaims)
+    claims["id"] = strconv.Itoa(user.Id)
+    claims["exp"] = time.Now().Add(time.Hour * 24).Unix() // Expires in 24 hours
+
+    // Sign token with secret key
+    signedToken, err := token.SignedString([]byte(SecretKey))
+    if err != nil {
+        return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+            "message": "Could not login",
+        })
+    }
+
+    // Set JWT token as cookie
+    c.Cookie(&fiber.Cookie{
+        Name:     "jwt",
+        Value:    signedToken,
+        Expires:  time.Now().Add(24 * time.Hour),
+        HTTPOnly: true,
+    })
+
+    return c.JSON(fiber.Map{
+        "message": "Success",
+    })
+}
+
+func main() {
+    app := fiber.New()
+    app.Post("/login", Login)
+
+    app.Listen(":3000")
+}
+```
+
+### OAuth Integration 👻
+- OAuth is an open-standard authorization protocol that allows users to grant limited access to their resources without sharing their credentials.
+- In Go, OAuth integration involves implementing OAuth flows (e.g., Authorization Code, Implicit, Client Credentials) to authenticate and authorize users with third-party services.
+- OAuth libraries in Go, such as golang.org/x/oauth2, facilitate the integration of OAuth providers like Google, Facebook, and GitHub.
+
+> [!IMPORTANT]
+> - The code will be a bit lengthy; here, I will provide some resources and blogs to read about OAuth2
+> - [OAuth 2.0 Implementation in Golang](https://dev.to/siddheshk02/oauth-20-implementation-in-golang-3mj1)
+> - [Getting Started with OAuth2 in Go](https://medium.com/@pliutau/getting-started-with-oauth2-in-go-2c9fae55d187)
+> - [Creating an OAuth2 Client in Golang](https://www.sohamkamani.com/golang/oauth/)
