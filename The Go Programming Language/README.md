@@ -901,14 +901,56 @@ func main() {
 Authorization is a critical aspect of web development, determining `what` actions a user is allowed to perform within an application after their identity has been authenticated. In simpler terms, it controls access to different functionalities or resources based on the user's permissions or roles. Let's explore the concept of authorization in more detail:
 
 1. **Purpose of Authorization: 🔗**
-   - Authorization ensures that users can only access the parts of an application or resources that they are allowed to.
-   - It prevents unauthorized users from performing sensitive operations or accessing restricted data.
+  - Authorization ensures that users can only access the parts of an application or resources that they are allowed to.
+  - It prevents unauthorized users from performing sensitive operations or accessing restricted data.
 
-2. **Authorization Methods: 👀**
-   - **Role-Based Access Control (RBAC):** Users are assigned roles, and access rights are granted based on these roles. For example, an "admin" role might have full access to all functionalities, while a "user" role might have limited access.
-   - **Attribute-Based Access Control (ABAC):** Access rights are determined based on various attributes associated with the user, the resource, and the environment. This approach allows for more fine-grained access control.
+3. **Authorization Methods: 👀**
+  - **Role-Based Access Control (RBAC):** Users are assigned roles, and access rights are granted based on these roles. For example, an "admin" role might have full access to all functionalities, while a "user" role might have limited access.
+  - **Attribute-Based Access Control (ABAC):** Access rights are determined based on various attributes associated with the user, the resource, and the environment. This approach allows for more fine-grained access control.
   
-3. **Authorization Process: 🧯**
+4. **Authorization Process: 🧯**
   - Once a user's identity is authenticated, the application determines the user's permissions or roles.
   - Based on these permissions or roles, the application decides whether to grant or deny access to specific functionalities or resources.
   - If access is granted, the user can proceed with the requested operation; otherwise, access is denied, and an appropriate error message is returned.
+
+## Implementing Authorization in Go 🚪
+Authorization is ensuring that users have appropriate access to resources and functionalities based on their roles or permissions. Implementing authorization involves defining access control rules and enforcing them within the application. Let's see: 
+
+### Role-Based Authorization 🥑
+- **Define Roles and Permissions:** Identify different user roles and the corresponding permissions they have within the application. For example, "admin" users might have full access to all functionalities, while "user" users might have restricted access.
+- **Authorize Requests:** Upon receiving a request, verify the user's role and permissions against the required access level for the requested resource or functionality.
+- **Enforce Access Control:** Allow or deny access to the resource based on the user's role and permissions. Ensure that unauthorized users receive appropriate error messages or responses.
+
+Example of Authorization using Middleware::
+> Implement middleware functions that intercept incoming requests and check the user's role and permissions before allowing access to specific endpoints or functionalities.
+
+```go
+func AdminOnlyMiddleware(next http.HandlerFunc) http.HandlerFunc {
+    return func(w http.ResponseWriter, r *http.Request) {
+        // Check if user is authenticated and has "admin" role
+        if isAuthenticated(r) && hasAdminRole(r) {
+            next.ServeHTTP(w, r)
+            return
+        }
+        http.Error(w, "Unauthorized", http.StatusUnauthorized)
+    }
+}
+
+func isAuthenticated(r *http.Request) bool {
+    // Check if user is authenticated based on session or token
+    return true // Placeholder implementation
+}
+
+func hasAdminRole(r *http.Request) bool {
+    // Check if user has "admin" role
+    return true // Placeholder implementation
+}
+```
+
+### Attribute-Based Authorization 🥐
+- **Define Attributes:** Determine the attributes associated with users, resources, and the environment that influence access control decisions. These attributes could include user roles, resource types, ownership, or other contextual information.
+- **Evaluate Policies:** Establish policies that govern access based on the attributes. For example, users with the "manager" role may only access resources owned by their department.
+- **Apply Policies:** Evaluate the attributes of the user, the requested resource, and the environment against the defined policies to determine access rights.
+
+> [!TIP]
+> Implementing Authorization in Go involves defining access control rules based on user roles, permissions, and attributes, and enforcing them within the application using middleware or custom logic. By implementing robust authorization mechanisms, developers can ensure that users have appropriate access to resources and functionalities while maintaining the security and integrity of the application.
