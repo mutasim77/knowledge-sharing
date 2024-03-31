@@ -32,9 +32,6 @@ Explore various topics related to Go programming:
   - [Implementing Authentication in Go 🛠️](#implementing-authentication-in-go-)
   - [Understanding Authorization 🔑](#understanding-authorization-)
   - [Implementing Authorization in Go 🚪](#implementing-authorization-in-go-)
-  - [Session Management and Cookies 🍪](#session-management-and-cookies-)
-  - [Best Practices and Security Considerations 🛡️](#best-practices-and-security-considerations-)
-
   
 ## Introduction to GO 🐹
 Go, created by Google in 2007 and open-sourced in 2009, is a relatively new programming language. It was developed to tackle challenges in modern infrastructure, where applications can benefit from multi-core processors and cloud servers. 📈
