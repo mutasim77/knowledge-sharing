@@ -13,6 +13,7 @@ aims to provide valuable content and foster a collaborative learning environment
   - [AWS Storage 🗄️](#aws-storage-)
   - [AWS Compute 💻](#aws-compute-)
   - [AWS Databases 🛢️](#aws-databases-)
+  - [Auto Scaling and Monitoring 🍟](#auto-scaling-and-monitoring-)
 
 ### Introduction to Cloud Computing ☁
 ![image](https://github.com/mutasim77/knowledge-sharing/assets/96326525/9b554614-3f33-4a83-b46b-f8745a356404)
