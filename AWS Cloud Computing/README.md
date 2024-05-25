@@ -13,6 +13,7 @@ aims to provide valuable content and foster a collaborative learning environment
   - [AWS Storage 🗄️](#aws-storage-)
   - [AWS Compute 💻](#aws-compute-)
   - [AWS Databases 🛢️](#aws-databases-)
+  - [AWS Networking Services 🌐](#aws-networking-services-)
   - [Auto Scaling and Monitoring 🍟](#auto-scaling-and-monitoring-)
 
 ### Introduction to Cloud Computing ☁
@@ -257,6 +258,15 @@ Amazon offers a range of database services that cater to various needs, from tra
 > Amazon's database services provide flexible and scalable solutions for various types of applications and workloads, enabling you to focus on building and scaling your applications without worrying about database management tasks. Whether you need a traditional relational database, a NoSQL database, or a data warehousing solution, Amazon has a service to meet your needs.
 
 
+## AWS Networking Services 🌐
+Amazon provides a comprehensive set of networking services to help you build a robust, scalable, and secure network infrastructure. These services enable you to connect your cloud resources, manage network traffic, and ensure the security and reliability of your applications.
+
+### Amazon VPC (Virtual Private Cloud) 🛠️
+- VPC allows you to create a logically isolated network in the AWS cloud.
+- You have full control over your virtual networking environment, including IP address ranges, subnets, and routing tables.
+- For example, you can use VPC to create a private network for your web application, separating public-facing servers from internal databases.
+
+### Amazon CloudFront 🌍
 
 ## Auto Scaling and Monitoring 🍟
 It's crucial to ensure that your applications are not only available but also responsive to changing demands. That's where Auto Scaling and Monitoring come into play.
