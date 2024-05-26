@@ -291,7 +291,7 @@ Amazon provides a comprehensive set of networking services to help you build a r
 - It provides static IP addresses and routes traffic to the nearest healthy endpoint.
 - For example, use Global Accelerator to ensure your application is fast and reliable for users worldwide, regardless of their location.
 
-
+> AWS Networking Services like VPC, CloudFront, Direct Connect, Route 53, Transit Gateway, and Global Accelerator help you build a robust, scalable, and efficient network for your applications, ensuring optimal performance and security.
 
 ## Auto Scaling and Monitoring 🍟
 It's crucial to ensure that your applications are not only available but also responsive to changing demands. That's where Auto Scaling and Monitoring come into play.
