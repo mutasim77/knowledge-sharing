@@ -17,7 +17,7 @@ aims to provide valuable content and foster a collaborative learning environment
   - [AWS Cost Management 💰](#aws-cost-management-)
   - [AWS Management and Governance 🛠](#aws-management-and-governance-)
   - [Other AWS Services 🚀](#other-aws-services-)
--[Conclusions 🌟](#conclusion-)
+- [Conclusions 🌟](#conclusion-)
 
 ### Introduction to Cloud Computing ☁
 ![image](https://github.com/mutasim77/knowledge-sharing/assets/96326525/9b554614-3f33-4a83-b46b-f8745a356404)
