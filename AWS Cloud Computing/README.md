@@ -267,6 +267,31 @@ Amazon provides a comprehensive set of networking services to help you build a r
 - For example, you can use VPC to create a private network for your web application, separating public-facing servers from internal databases.
 
 ### Amazon CloudFront 🌍
+- CloudFront is a content delivery network (CDN) that delivers data, videos, and applications globally with low latency.
+- It caches your content at edge locations worldwide, improving load times for users.
+- For example, use CloudFront to quickly deliver your website’s static assets, like images and videos, to users around the globe.
+
+### AWS Direct Connect 🌐
+- Direct Connect establishes a dedicated network connection from your premises to AWS.
+- It provides a more consistent network experience compared to internet-based connections.
+- For example, use Direct Connect for secure, high-speed data transfer between your on-premises data center and AWS.
+
+### Amazon Route 53 🌐
+- Route 53 is a scalable DNS web service for domain name registration and routing.
+- It translates domain names into IP addresses and routes end users to your applications.
+- For example, use Route 53 to route traffic to different AWS regions based on user location for better performance.
+
+### AWS Transit Gateway 🛤️
+- Transit Gateway connects VPCs and on-premises networks through a central hub.
+- It simplifies your network architecture by managing multiple connections through a single gateway.
+- For example, use Transit Gateway to connect multiple VPCs in different regions for easier management and lower latency.
+
+### AWS Global Accelerator 🚀
+- Global Accelerator improves the availability and performance of your applications for global users.
+- It provides static IP addresses and routes traffic to the nearest healthy endpoint.
+- For example, use Global Accelerator to ensure your application is fast and reliable for users worldwide, regardless of their location.
+
+
 
 ## Auto Scaling and Monitoring 🍟
 It's crucial to ensure that your applications are not only available but also responsive to changing demands. That's where Auto Scaling and Monitoring come into play.
