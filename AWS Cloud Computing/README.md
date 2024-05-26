@@ -12,9 +12,10 @@ aims to provide valuable content and foster a collaborative learning environment
   - [AWS IAM 🔐](#aws-iam-)
   - [AWS Storage 🗄️](#aws-storage-)
   - [AWS Compute 💻](#aws-compute-)
+    - [Auto Scaling and Monitoring 🍟](#auto-scaling-and-monitoring-)
   - [AWS Databases 🛢️](#aws-databases-)
   - [AWS Networking Services 🌐](#aws-networking-services-)
-  - [Auto Scaling and Monitoring 🍟](#auto-scaling-and-monitoring-)
+  - [AWS Cost Management 💰](#aws-cost-management-)
 
 ### Introduction to Cloud Computing ☁
 ![image](https://github.com/mutasim77/knowledge-sharing/assets/96326525/9b554614-3f33-4a83-b46b-f8745a356404)
@@ -232,6 +233,32 @@ Containers are like lightweight, portable packages that contain everything your 
 
 > Amazon's compute services offer different ways to run your applications in the cloud, whether you need virtual machines, containers, serverless computing, or a managed platform for your apps. Each service caters to different needs and preferences, giving you flexibility and scalability for your projects.
 
+## Auto Scaling and Monitoring 🍟
+It's crucial to ensure that your applications are not only available but also responsive to changing demands. That's where Auto Scaling and Monitoring come into play.
+
+**Auto Scaling 🎚️** allows you to automatically adjust the number of resources, such as compute instances, based on the workload. This means you can seamlessly handle fluctuations in traffic without manual intervention, ensuring your applications remain responsive and cost-efficient.
+
+**Monitoring 📺** is the process of keeping an eye on the health, performance, and security of your AWS resources and applications. By collecting and analyzing data from various sources, you can gain valuable insights into how your systems are performing and detect any issues before they impact your users.
+
+### Elastic Load Balancing 🧬
+- Elastic Load Balancing (ELB) automatically distributes incoming application traffic across multiple targets, such as EC2 instances, containers, and IP addresses, to ensure optimal resource utilization and high availability.
+- Think of it as a traffic cop for your applications. It monitors the health of your instances and redirects traffic away from unhealthy instances, ensuring that your application remains available and responsive.
+- For example, if you have a web application hosted on multiple EC2 instances, ELB can evenly distribute incoming web requests to these instances, preventing any single instance from becoming overwhelmed with traffic.
+
+### Amazon CloudWatch ⏰
+- CloudWatch is a monitoring and observability service that provides real-time insights into the performance and health of your AWS resources and applications.
+- It collects and tracks metrics, monitors logs and events, and sets alarms to notify you of any changes or issues in your environment.
+- Imagine CloudWatch as a dashboard for your AWS services. It gives you visibility into how your resources are performing, allowing you to troubleshoot problems, optimize resource usage, and ensure the reliability of your applications.
+
+### Amazon EC2 Auto Scaling 🍗
+- EC2 Auto Scaling automatically adjusts the number of EC2 instances in your fleet based on demand, ensuring that you have the right amount of capacity to handle your workload at all times.
+- It allows you to define scaling policies based on metrics like CPU utilization or request count, so your application can scale in or out dynamically in response to changes in traffic.
+- Picture it as an elastic rubber band for your EC2 instances. When traffic increases, EC2 Auto Scaling adds more instances to handle the load, and when traffic decreases, it removes excess instances to save costs.
+
+> Elastic Load Balancing, Amazon CloudWatch, and Amazon EC2 Auto Scaling work together to ensure that your applications are highly available, scalable, and performant in the AWS cloud. ELB distributes incoming traffic, CloudWatch monitors your resources and applications, and EC2 Auto Scaling automatically adjusts your capacity to match demand, providing a seamless and efficient experience for your users.
+
+
+
 ## AWS Databases 🛢
 Amazon offers a range of database services that cater to various needs, from traditional relational databases to NoSQL and data warehousing solutions. These services provide scalable, reliable, and managed database solutions for different types of applications and workloads.
 
@@ -293,26 +320,33 @@ Amazon provides a comprehensive set of networking services to help you build a r
 
 > AWS Networking Services like VPC, CloudFront, Direct Connect, Route 53, Transit Gateway, and Global Accelerator help you build a robust, scalable, and efficient network for your applications, ensuring optimal performance and security.
 
-## Auto Scaling and Monitoring 🍟
-It's crucial to ensure that your applications are not only available but also responsive to changing demands. That's where Auto Scaling and Monitoring come into play.
 
-**Auto Scaling 🎚️** allows you to automatically adjust the number of resources, such as compute instances, based on the workload. This means you can seamlessly handle fluctuations in traffic without manual intervention, ensuring your applications remain responsive and cost-efficient.
+## AWS Cost Management 💰
+Amazon provides a suite of tools to help you monitor, manage, and optimize your spending on AWS. These services give you insights into your costs and usage, allowing you to control expenses and improve efficiency.
 
-**Monitoring 📺** is the process of keeping an eye on the health, performance, and security of your AWS resources and applications. By collecting and analyzing data from various sources, you can gain valuable insights into how your systems are performing and detect any issues before they impact your users.
+### AWS Cost Explorer 📊
+- Cost Explorer is a graphical interface that helps you visualize and analyze your AWS costs and usage.
+- You can create custom reports to track spending patterns and identify cost drivers.
+- For example, use Cost Explorer to see which services are driving up your monthly bill and adjust your usage accordingly.
 
-### Elastic Load Balancing 🧬
-- Elastic Load Balancing (ELB) automatically distributes incoming application traffic across multiple targets, such as EC2 instances, containers, and IP addresses, to ensure optimal resource utilization and high availability.
-- Think of it as a traffic cop for your applications. It monitors the health of your instances and redirects traffic away from unhealthy instances, ensuring that your application remains available and responsive.
-- For example, if you have a web application hosted on multiple EC2 instances, ELB can evenly distribute incoming web requests to these instances, preventing any single instance from becoming overwhelmed with traffic.
+### AWS Budgets 🧮
+- AWS Budgets allows you to set custom cost and usage budgets and receive alerts when you exceed or are forecasted to exceed your thresholds.
+- You can track your spending against your budget and get notifications via email or SMS.
+- For example, set a budget of $500 per month for your development environment, and AWS Budgets will alert you if you are close to this limit.
 
-### Amazon CloudWatch ⏰
-- CloudWatch is a monitoring and observability service that provides real-time insights into the performance and health of your AWS resources and applications.
-- It collects and tracks metrics, monitors logs and events, and sets alarms to notify you of any changes or issues in your environment.
-- Imagine CloudWatch as a dashboard for your AWS services. It gives you visibility into how your resources are performing, allowing you to troubleshoot problems, optimize resource usage, and ensure the reliability of your applications.
+### AWS Cost and Usage Report (CUR) 📄
+- The Cost and Usage Report provides detailed data about your AWS costs and usage.
+- You can download comprehensive reports for in-depth analysis or integrate them with tools like Amazon Athena or Redshift.
+- For example, use the CUR to analyze spending trends over the past year and identify opportunities for savings.
 
-### Amazon EC2 Auto Scaling 🍗
-- EC2 Auto Scaling automatically adjusts the number of EC2 instances in your fleet based on demand, ensuring that you have the right amount of capacity to handle your workload at all times.
-- It allows you to define scaling policies based on metrics like CPU utilization or request count, so your application can scale in or out dynamically in response to changes in traffic.
-- Picture it as an elastic rubber band for your EC2 instances. When traffic increases, EC2 Auto Scaling adds more instances to handle the load, and when traffic decreases, it removes excess instances to save costs.
+### AWS Trusted Advisor 🛡️
+- Trusted Advisor provides real-time guidance to help you reduce costs, improve performance, and enhance security.
+- It offers recommendations across five categories: cost optimization, performance, security, fault tolerance, and service limits.
+- For example, Trusted Advisor might suggest terminating underutilized EC2 instances to save money.
 
-> Elastic Load Balancing, Amazon CloudWatch, and Amazon EC2 Auto Scaling work together to ensure that your applications are highly available, scalable, and performant in the AWS cloud. ELB distributes incoming traffic, CloudWatch monitors your resources and applications, and EC2 Auto Scaling automatically adjusts your capacity to match demand, providing a seamless and efficient experience for your users.
+### AWS Cost Anomaly Detection 🚨
+- Cost Anomaly Detection uses machine learning to monitor your AWS usage and detect unusual spending patterns.
+- It alerts you when an anomaly is detected, helping you quickly address unexpected costs.
+- For example, receive notifications if your AWS bill spikes due to an unexpected increase in resource usage.
+
+> In summary, AWS Cost Management Services like Cost Explorer, Budgets, Cost and Usage Report, Trusted Advisor, and Cost Anomaly Detection help you gain insights into your spending, set and enforce budgets, and optimize costs, ensuring you get the most value from your AWS investments.
