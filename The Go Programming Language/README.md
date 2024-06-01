@@ -986,3 +986,56 @@ Pointers are a fundamental concept in Go and many other programming languages. T
      *p = 21        // changes the value stored at the memory address p points to
      ```
 ### 4. Examples: 🥶
+  - **Swapping Values:**
+    ```go
+	func swap(a, b *int) {
+	    temp := *a
+	    *a = *b
+	    *b = temp
+	}
+	
+	func main() {
+	    x, y := 1, 2
+	    swap(&x, &y)
+	    fmt.Println(x, y) // Output: 2 1
+	}
+       ```
+   - **Using Pointers with Structs:**
+     ```go
+	 type Person struct {
+	    Name string
+	    Age  int
+	 }
+	
+	 func main() {
+	    p := Person{"Alice", 30}
+	    q := &p
+	    q.Age = 31
+	    fmt.Println(p.Age) // Output: 31
+	 }
+      ```
+### 5. Pointers in Functions😶‍🌫️
+- **Passing by Value vs Passing by Reference: 🎚️🔗**
+  - **Passing by Value: 🎚️** When you pass variables to functions by value, the function gets a copy of the variable.
+  - **Passing by Reference: 🔗** When you pass pointers to functions, the function can modify the original variable.
+```go
+func incrementByValue(x int) {
+    x++
+}
+
+func incrementByReference(x *int) {
+    *x++
+}
+
+func main() {
+    n := 1
+    incrementByValue(n)
+    fmt.Println(n) // Output: 1
+
+    incrementByReference(&n)
+    fmt.Println(n) // Output: 2
+}
+```
+
+> [!TIP]
+> Pointers are a powerful feature in Go that enable efficient memory management and provide the ability to modify variables directly. By understanding how to declare, use, and manipulate pointers, you can write more efficient and effective Go programs. Whether you're working with simple variables or complex data structures, pointers offer a flexible and essential tool for your programming toolkit.
