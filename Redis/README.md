@@ -163,6 +163,17 @@ print(name)  # Output: John
 ### JavaScript (Node.js) 🌐
 - [`redis`](https://www.npmjs.com/package/redis): A popular Redis client library for Node.js.
 - Example usage:
+```js
+import { createClient } from 'redis';
+
+const client = await createClient()
+  .on('error', err => console.log('Redis Client Error', err))
+  .connect();
+
+await client.set('key', 'value');
+const value = await client.get('key');
+await client.disconnect();
+```
 
 ## Use Cases 🎯
 Redis is widely used in various scenarios due to its fast performance and versatile data structures. Here are a few common use cases:
