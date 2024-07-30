@@ -351,14 +351,79 @@ When working with Redis Pub/Sub, consider the following best practices and consi
 > Redis Pub/Sub provides a simple and efficient way to implement real-time messaging and event-driven architectures. By leveraging Pub/Sub, you can build responsive and scalable applications that can handle real-time updates, notifications, and communication between multiple clients or services.
 
 ## Transactions 💼
-Redis supports transactions, allowing you to execute a group of commands atomically. Transactions ensure that all commands within the transaction are executed sequentially and without interruption. Some common transaction commands include:
+Redis provides support for transactions, allowing you to execute a group of commands atomically. Transactions ensure that all the commands within the transaction are executed sequentially and without interruption from other clients. This is useful when you need to perform multiple operations that depend on each other or when you want to ensure data consistency.
 
-- `MULTI:` Start a transaction.
-- `EXEC:` Execute all the commands queued in the current transaction.
-- `DISCARD:` Discard all the commands queued in the current transaction.
-- `WATCH key [key ...]:` Watch one or more keys for modifications before executing a transaction.
+### MULTI, EXEC, and DISCARD
+
+Redis transactions are initiated using the `MULTI` command and executed using the `EXEC` command. Here's how it works:
+1. The client starts a transaction by issuing the MULTI command.
+2. The client sends a series of commands, which are queued and not executed immediately.
+3. When the client is ready to execute the transaction, it issues the EXEC command.
+4. Redis executes all the queued commands in the order they were received, as a single atomic operation.
+5. If any command in the transaction fails, Redis will continue executing the remaining commands.
+
+If the client wants to discard the queued commands and abort the transaction, it can use the `DISCARD` command.
+
+Here's an example of a Redis transaction:
+```bash
+redis> MULTI
+OK
+redis> SET counter 10
+QUEUED
+redis> INCR counter
+QUEUED
+redis> GET counter
+QUEUED
+redis> EXEC
+1) OK
+2) (integer) 11
+3) "11"
+```
+In this example:
+
+1. The `MULTI` command starts the transaction.
+2. The `SET`, `INCR`, and `GET` commands are queued.
+3. The `EXEC` command executes the queued commands atomically.
+4. The transaction results are returned as an array of responses.
+
+### Error Handling 🔗
+If an error occurs during the execution of a transaction, Redis handles it differently depending on the type of error:
+
+- **Command Errors:** If a command within the transaction is malformed or invalid, Redis will abort the transaction and discard all the queued commands. The `EXEC` command will return an error response.
+- Run-time Errors:** If a command fails during execution (e.g., a script raises an error), Redis will continue executing the remaining commands in the transaction. The `EXEC` command will return an array of responses, including the error response for the failed command.
+
+> [!IMPORTANT]
+> It's important to note that Redis transactions do not support `rollbacks`. If an error occurs during the execution of a transaction, the commands that were executed before the error will not be automatically undone. It's the responsibility of the application to handle and recover from such scenarios.
+
+### WATCH and Optimistic Locking
+Redis provides a mechanism called `WATCH` for implementing optimistic locking in transactions. With `WATCH`, you can monitor one or more keys and ensure that the transaction is executed only if none of the watched keys have been modified by another client.
+
+Here's how it works:
+1. The client issues the `WATCH` command followed by one or more keys to watch.
+2. The client executes the transaction using `MULTI` and `EXEC`.
+3. If any of the watched keys have been modified by another client during the transaction, the `EXEC` command will fail, and the transaction will not be executed.
+4. If the watched keys remain unchanged, the transaction is executed successfully.
+
+Here's an example of using WATCH in a transaction:
+```bash
+redis> WATCH counter
+OK
+redis> GET counter
+"10"
+redis> MULTI
+OK
+redis> SET counter 20
+QUEUED
+redis> EXEC
+(nil)
+```
+In this example:
+1. The `WATCH` command is used to monitor the counter key.
+2. The transaction is started with `MULTI`.
+3. If another client modifies the counter key before the transaction is executed, the `EXEC` command will fail, and the transaction will not be executed.
 
 
+> Redis transactions provide a powerful mechanism for ensuring data consistency and atomicity in your application. By understanding how transactions work, using them judiciously, and following best practices, you can build reliable and efficient Redis-based systems.
 
 ## Persistence 💾
 Redis provides two main persistence options to ensure data durability: RDB (Redis Database) and AOF (Append-Only File).
