@@ -27,7 +27,7 @@ Explore Redis step-by-step:
   - [Python Application: Cache API calls 🐍](#python-application-cache-api-calls-)
 - [Use Cases 🎯](#use-cases-)
 - [Best Practices ✅](#best-practices-)
-- [Conclusion 🎉](#conclustion-)
+- [Conclusion 🎉](#Conclusion-)
    
 ## Introduction to Redis 🔍
 Redis (Remote Dictionary Server) is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. It supports a wide range of data structures, including strings, hashes, lists, sets, and sorted sets, making it highly versatile for various use cases.
