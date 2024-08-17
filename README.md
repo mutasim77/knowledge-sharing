@@ -30,6 +30,9 @@ This repository stands as a testament to the belief that knowledge becomes more 
 - [Cryptography 🔒](https://github.com/mutasim77/knowledge-sharing/tree/master/Cryptography) -  Unlock secure communication! 🛡️
 - [Software Testing 🧪](https://github.com/mutasim77/knowledge-sharing/blob/master/Software%20Testing/README.md) - Test your skills, one note at a time! 🧪
 - [Probability and Statictics 📊](https://github.com/mutasim77/knowledge-sharing/tree/master/Probability%20and%20Statictics) - Master data insight! Explore Probability and Statistics 📈
+- [Redis 🧠](https://github.com/mutasim77/knowledge-sharing/tree/master/Redis) - Supercharge your data store! Explore in-memory data structures with Redis. 🚀
+- [VueJS 🌐](https://github.com/mutasim77/knowledge-sharing/tree/master/VueJS) - Build reactive user interfaces! Discover the progressive JavaScript framework, VueJS. 💻
+- [Svelte 🔥](https://github.com/mutasim77/knowledge-sharing/tree/master/Svelte) - Revolutionize web development! Dive into Svelte for high-performance UI creation. ⚡
 
 ## Contributing 🔗
 Your contributions are highly encouraged! If you've learned something new or have valuable insights to share, feel free to contribute. Here's our [Contribution guide](https://github.com/mutasim77/knowledge-sharing/blob/master/.github/CONTRIBUTING.md); please read it, and you're welcome to contribute!
