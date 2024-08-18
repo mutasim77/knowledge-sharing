@@ -625,3 +625,163 @@ import { counter } from './stores.js';
 5. Use the `$` syntax in components for simplicity, but be aware that it's syntactic sugar for `subscribe` under the hood.
 
 Svelte's store system provides a powerful yet simple way to manage state in your applications. Its integration with Svelte's reactivity system makes it a joy to use compared to some more complex state management solutions in other frameworks.
+
+## Lifecycle 🔄
+
+Understanding the lifecycle of a Svelte component is crucial for managing side effects, integrating with external libraries, and optimizing performance. Svelte provides several lifecycle functions that allow you to hook into different stages of a component's existence.
+
+### Lifecycle Functions
+
+Svelte offers four main lifecycle functions:
+
+1. `onMount`
+2. `onDestroy`
+3. `beforeUpdate`
+4. `afterUpdate`
+
+Let's explore each of these in detail:
+
+#### 1. onMount
+
+The `onMount` function is called after the component is first rendered to the DOM. This is the ideal place to run any side effects that require the component to be in the DOM.
+
+```javascript
+import { onMount } from 'svelte';
+
+onMount(() => {
+    console.log('The component has mounted');
+    
+    // You can return a cleanup function if needed
+    return () => {
+        console.log('Cleanup from onMount');
+    };
+});
+```
+
+Use cases for `onMount`:
+- Initializing third-party libraries that manipulate the DOM
+- Starting timers or intervals
+- Making initial API calls
+
+Comparison with React:
+- Similar to `useEffect(() => {}, [])` in React hooks
+- Or `componentDidMount` in class components
+
+#### 2. onDestroy
+
+The `onDestroy` function is called when the component is unmounted from the DOM. It's used for cleanup tasks.
+
+```javascript
+import { onDestroy } from 'svelte';
+
+onDestroy(() => {
+    console.log('The component is being destroyed');
+    // Perform cleanup tasks here
+});
+```
+
+Use cases for `onDestroy`:
+- Clearing timers or intervals
+- Unsubscribing from subscriptions
+- Cleaning up resources or event listeners
+
+Comparison with React:
+- Similar to the cleanup function returned by `useEffect` in React hooks
+- Or `componentWillUnmount` in class components
+
+#### 3. beforeUpdate
+
+The `beforeUpdate` function is called immediately before the component is updated after any state change. This is useful for tasks you need to perform before the DOM is updated.
+
+```javascript
+import { beforeUpdate } from 'svelte';
+
+beforeUpdate(() => {
+    console.log('Component is about to update');
+});
+```
+
+Use cases for `beforeUpdate`:
+- Saving the current scroll position
+- Recording the current state for comparison after update
+
+Comparison with React:
+- Similar to `getSnapshotBeforeUpdate` in class components
+- No direct equivalent in React hooks, but can be simulated with `useEffect`
+
+#### 4. afterUpdate
+
+The `afterUpdate` function is called after the component updates and the DOM is in sync with your data.
+
+```javascript
+import { afterUpdate } from 'svelte';
+
+afterUpdate(() => {
+    console.log('Component just updated');
+});
+```
+
+Use cases for `afterUpdate`:
+- Updating the scroll position
+- Measuring DOM elements after a change
+- Updating third-party libraries that manipulate the DOM
+
+Comparison with React:
+- Similar to `componentDidUpdate` in class components
+- Or `useEffect` without dependencies in React hooks
+
+### Practical Example
+
+Let's look at a practical example that uses multiple lifecycle functions:
+
+```html
+<script>
+import { onMount, onDestroy, beforeUpdate, afterUpdate } from 'svelte';
+
+let count = 0;
+let timerId;
+
+onMount(() => {
+    console.log('Component mounted');
+    timerId = setInterval(() => {
+        count += 1;
+    }, 1000);
+});
+
+onDestroy(() => {
+    console.log('Component being destroyed');
+    clearInterval(timerId);
+});
+
+beforeUpdate(() => {
+    console.log('Component about to update, count is', count);
+});
+
+afterUpdate(() => {
+    console.log('Component updated, count is now', count);
+});
+</script>
+
+<p>Count: {count}</p>
+```
+
+This example demonstrates:
+- Using `onMount` to set up an interval
+- Using `onDestroy` to clean up the interval
+- Using `beforeUpdate` and `afterUpdate` to log the state before and after updates
+
+### Best Practices
+
+1. Use `onMount` for initialization that requires the DOM to be present.
+2. Always clean up side effects (like timers or subscriptions) in `onDestroy`.
+3. Use `beforeUpdate` and `afterUpdate` sparingly, as they run on every state change.
+4. Avoid direct DOM manipulation in lifecycle functions when possible; let Svelte handle it.
+5. Remember that lifecycle functions are only run on the client-side, not during server-side rendering.
+
+### Comparison with Other Frameworks
+
+- React: Svelte's lifecycle functions are more straightforward compared to React's class lifecycle methods. They're closer to React hooks in terms of simplicity, but with clearer separation of concerns.
+- Vue: Svelte's lifecycle functions are similar to Vue's lifecycle hooks, but with slightly different naming (e.g., `onMount` in Svelte vs `mounted` in Vue).
+- Angular: Svelte's approach is more lightweight compared to Angular's lifecycle hooks, which are tied to its change detection cycle.
+
+Understanding and effectively using these lifecycle functions will help you manage your Svelte components more efficiently, handle side effects properly, and create more robust applications.
